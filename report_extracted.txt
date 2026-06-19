@@ -1,0 +1,858 @@
+001: BỘ GIÁO DỤC VÀ ĐÀO TẠO
+002: TRƯỜNG ĐẠI HỌC MỎ - ĐỊA CHẤT
+003: BÁO CÁO THỰC TẬP DOANH NGHIỆP
+004: NGÀNH CÔNG NGHỆ THÔNG TIN
+005: CHUYÊN NGÀNH CÔNG NGHỆ PHẦN MỀM
+006: ĐỊA ĐIỂM THỰC TẬP:
+007: XÂY DỰNG HỆ THỐNG HỖ TRỢ HỌC TIẾNG ANH CHO TRẺ EM ỨNG DỤNG TRÍ TUỆ NHÂN TẠO (AI) DOANH NGHIỆP DIGI DINOS
+008: HÀ NỘI 05/2026
+009: MỤC LỤC
+010: MỤC LỤC2
+011: DANH MỤC CÁC TỪ VIẾT TẮT5
+012: DANH MỤC CÁC HÌNH VẼ6
+013: DANH MỤC CÁC BẢNG BIỂU7
+014: MỞ ĐẦU8
+015: 1.1 Lý do chọn đề8
+016: 2. Mục tiêu thực tập8
+017: 3. Đối tượng và phạm vi thực tập9
+018: 4. Ý nghĩa khoa học (nếu có) và thực tiễn (nếu có) của đề tài9
+019: chương 1 TỔNG QUAN VỀ ĐƠN VỊ THỰC TẬP11
+020: 1.2 Giới thiệu chung11
+021: 1.2.1 Quá trình hình thành và phát triển của doanh nghiệp11
+022: 1.2.2 Chức năng, nhiệm vụ của đơn vị thực tập11
+023: 1.2.3 Lĩnh vực hoạt động của doanh nghiệp13
+024: 1.2.4 Cơ cấu tổ chức, quản lý của doanh nghiệp14
+025: 1.3 Vị trí thực tập16
+026: 1.4 Đề tài thực tập16
+027: 1.5 Lịch làm việc17
+028: Chương 2 NỘI DUNG THỰC TẬP18
+029: 2.1 Nhiệm vụ được giao18
+030: 2.2 Giải pháp thực hiện18
+031: 2.3 Công việc thực hiện19
+032: 2.4 Phương thức làm việc23
+033: 2.5 Quy trình thực hiện24
+034: 5. Thiết kế cơ sở dữ liệu24
+035: 2.6 Kết quả đạt được30
+036: 2.7 Những vấn đề còn tồn tại34
+037: 2.8 Đề xuất hướng phát triển35
+038: 3 ĐÁNH GIÁ KẾT QUẢ ĐẠT ĐƯỢC37
+039: 3.1 Mở đầu chương37
+040: 3.2 Đánh giá mức độ hoàn thành mục tiêu thực tập37
+041: 3.3 Đánh giá kết quả triển khai hệ thống38
+042: 3.4 Đánh giá chất lượng hệ thống đã xây dựng39
+043: 3.5 So sánh với các hệ thống học tiếng Anh tương tự40
+044: 3.6 Bài học kinh nghiệm rút ra41
+045: 3.7 Một số chú ý42
+046: 3.8 Quy trình làm TTDN42
+047: 3.9 Kết chương43
+048: KẾT LUẬN44
+049: TÀI LIỆU THAM KHẢO45
+050: Tài liệu tham khảo45
+051: PHỤ LỤC49
+052: DANH MỤC CÁC TỪ VIẾT TẮT
+053: STT
+054: Từ viết tắt
+055: Từ tiếng Anh
+056: Từ và nghĩa tiếng Việt
+057: 1
+058: CSDL
+059: Cơ sở dữ liệu
+060: 2
+061: DB
+062: Database
+063: Cơ sở dữ liệu
+064: 3
+065: AI
+066: Artificial Intelligence
+067: Trí tuệ nhân tạo
+068: 4
+069: ASR
+070: Automatic Speech Recognition
+071: Nhận diện giọng nói tự
+072: 5
+073: API
+074: Application Programming Interface
+075: Giao diện lập trình ứng dụng
+076: 6
+077: UI/UX
+078: User Interface / User Experience
+079: Giao diện / Trải nghiệm người dùng
+080: 7
+081: TTS
+082: Text-to-Speech
+083: Chuyển đổi văn bản thành giọng nói
+084: 8
+085: LLM
+086: Large Language Model
+087: Mô hình ngôn ngữ lớn
+088: 9
+089: R&D
+090: Research and Development
+091: Nghiên cứu và Phát triển
+092: 10
+093: QA/QC
+094: Quality Assurance / Quality Control
+095: Đảm bảo / Kiểm soát chất lượng
+096: 11
+097: REST API
+098: Representational State Transfer API
+099: 12
+100: JWT
+101: JSON Web Token
+102: 13
+103: HTTP
+104: HyperText Transfer Protocol
+105: 14
+106: WebSocket
+107: WebSocket
+108: Giao thức kết nối thời gian thực
+109: 15
+110: ORM
+111: Object Relational Mapping
+112: Kỹ thuật ánh xạ giữa đối tượng trong lập trình và dữ liệu trong cơ sở dữ liệu quan hệ.
+113: 16
+114: JSON
+115: JavaScript Object Notation
+116: Định dạng dữ liệu dạng văn bản dùng để lưu trữ và trao đổi dữ liệu.
+117: 17
+118: SQL
+119: Structured Query Language
+120: Ngôn ngữ truy vấn có cấu trúc.
+121: DANH MỤC CÁC HÌNH VẼ
+122: Hình 1-1 Logo của công ty12
+123: Hình 1-2 Sơ đồ tổ chức của Digi16
+124: Hình 2-1 Giao diện đăng nhập đăng kí38
+125: Hình2-2: Giao diện khu vực phụ huynh38
+126: Hình 2-3.1: Giao diện chủ đề39
+127: Hình 2-3.2: Giao diện chủ đề39
+128: Hình 2-4: Giao diện lịch sử và tổng kết buổi học39
+129: Hình 2-5: Giao diện Kid Bot40
+130: DANH MỤC CÁC BẢNG BIỂU
+131: Bảng 1-1 Lịch làm việc20
+132: MỞ ĐẦU
+133: Lý do chọn đề
+134: ⦁Tính cấp thiết của đề tài.
+135: Trong bối cảnh công nghệ thông tin ngày càng phát triển mạnh mẽ, trí tuệ nhân tạo (AI) đang được ứng dụng rộng rãi trong nhiều lĩnh vực, đặc biệt là giáo dục. Việc ứng dụng AI vào giảng dạy giúp nâng cao hiệu quả học tập thông qua cá nhân hóa nội dung, tăng tính tương tác và hỗ trợ người học một cách linh hoạt. Đối với việc học tiếng Anh của trẻ em, phương pháp học truyền thống còn nhiều hạn chế như thiếu sự tương tác, khó tạo hứng thú và chưa đáp ứng được nhu cầu học tập cá nhân hóa. Vì vậy, việc xây dựng một hệ thống học tiếng Anh ứng dụng AI là cần thiết và phù hợp với xu hướng phát triển hiện nay.
+136: ⦁Tầm quan trọng của vấn đề nghiên cứu.
+137: Việc nghiên cứu và phát triển hệ thống hỗ trợ học tiếng Anh cho trẻ em ứng dụng AI không chỉ giúp nâng cao hiệu quả học tập mà còn góp phần đổi mới phương pháp giáo dục. Thông qua việc tích hợp các công nghệ như nhận diện giọng nói, xử lý ngôn ngữ tự nhiên và chatbot thông minh, hệ thống có thể hỗ trợ trẻ luyện phát âm, học từ vựng và tương tác một cách sinh động. Điều này giúp trẻ tiếp cận ngôn ngữ một cách tự nhiên, tăng khả năng ghi nhớ và phát triển kỹ năng giao tiếp. Đồng thời, hệ thống còn giúp phụ huynh và giáo viên dễ dàng theo dõi tiến độ học tập của trẻ.
+138: ⦁Lý do cá nhân chọn đề tài này.
+139: Bản thân em nhận thấy việc học tiếng Anh từ sớm đóng vai trò rất quan trọng đối với sự phát triển của trẻ em trong thời đại hội nhập. Tuy nhiên, không phải trẻ nào cũng có điều kiện tiếp cận với các phương pháp học hiện đại. Với mong muốn ứng dụng những kiến thức đã học vào thực tiễn, đồng thời tạo ra một sản phẩm có giá trị hỗ trợ giáo dục, em đã lựa chọn đề tài “Xây dựng hệ thống hỗ trợ học tiếng Anh cho trẻ em ứng dụng Trí tuệ nhân tạo (AI)” làm đề tài thực tập. Thông qua đề tài này, em mong muốn nâng cao kiến thức chuyên môn, rèn luyện kỹ năng lập trình và tiếp cận các công nghệ mới trong lĩnh vực trí tuệ nhân tạo.
+140: ⦁2. Mục tiêu thực tập
+141: ⦁Mục tiêu tổng quát.
+142: ⦁Tìm hiểu quy trình phát triển phần mềm và ứng dụng công nghệ trí tuệ nhân tạo (AI) trong lĩnh vực giáo dục tại Digi Dinos.
+143: ⦁Vận dụng kiến thức đã học vào việc xây dựng hệ thống hỗ trợ học tiếng Anh cho trẻ em trong môi trường doanh nghiệp thực tế.
+144: ⦁Rèn luyện kỹ năng làm việc chuyên nghiệp, nâng cao khả năng tư duy và giải quyết vấn đề khi tham gia thực tập tại công ty.
+145: ⦁Mục tiêu cụ thể.
+146: ⦁Nghiên cứu các công nghệ AI liên quan như nhận diện giọng nói tự động (ASR), tổng hợp giọng nói (TTS), chấm điểm phát âm và tích hợp LLM (Large Language Model) trong các dự án tại Digi Dinos. Tìm hiểu hệ thống mạng, các thiết bị/hạ tầng sử dụng tại công ty.
+147: ⦁Tìm hiểu quy trình phát triển phần mềm, cách tổ chức dự án và phương thức làm việc tại doanh nghiệp.
+148: ⦁Tích hợp và vận hành pipeline AI gồm ASR (nhận diện giọng nói), chấm điểm phát âm bằng LLM và TTS (tổng hợp giọng nói phản hồi) thông qua AI Service; đồng thời xây dựng và sử dụng các API REST của Backend (auth, children, topics, sessions).
+149: ⦁Tham gia kiểm thử, đánh giá và cải thiện chất lượng sản phẩm phần mềm.
+150: ⦁Rèn luyện kỹ năng lập trình, làm việc nhóm trong môi trường thực tế tại công ty.
+151: ⦁Đánh giá năng lực bản thân và định hướng phát triển trong lĩnh vực công nghệ thông tin, đặc biệt là trí tuệ nhân tạo (AI).
+152: ⦁3. Đối tượng và phạm vi thực tập
+153: ⦁Đối tượng thực tập:
+154: Đối tượng nghiên cứu trong đợt thực tập bao gồm: quy trình phát triển phần mềm tại Digi Dinos, các công nghệ trí tuệ nhân tạo (AI) được ứng dụng trong lĩnh vực giáo dục, cùng với hệ thống hỗ trợ học tiếng Anh cho trẻ em mà sinh viên tham gia xây dựng và phát triển trong quá trình thực tập.
+155: ⦁Phạm vi của đề tài:
+156: ⦁Về thời gian: từ ngày02/03/2026 đến15/05/202 (theo kế hoạch của nhà trường).
+157: ⦁Về không gian: thực tập tại Digi Dinos.
+158: ⦁Về nội dung: nghiên cứu, thiết kế và xây dựng hệ thống hỗ trợ học tiếng Anh cho trẻ em ứng (Speak Joy) dụng công nghệ AI; tìm hiểu và áp dụng các kỹ thuật như nhận diện giọng nói tự động (ASR), tổng hợp giọng nói (TTS), chấm điểm phát âm bằng LLM, và xây dựng API nghiệp vụ với FastAPI; tham gia vào các công việc liên quan như phân tích yê
+159: ⦁4. Ý nghĩa khoa học (nếu có) và thực tiễn (nếu có) của đề tài
+160: ⦁Đóng góp về mặt khoa học
+161: Đề tài góp phần làm rõ việc ứng dụng công nghệ trí tuệ nhân tạo (AI) trong lĩnh vực giáo dục, đặc biệt là trong việc hỗ trợ học tiếng Anh cho trẻ em. Theo UNESCO, việc ứng dụng AI trong giáo dục có thể giúp cá nhân hóa quá trình học tập và nâng cao hiệu quả giảng dạy. Thông qua việc nghiên cứu và triển khai các kỹ thuật như nhận diện giọng nói tự động (ASR), tổng hợp giọng nói (TTS), chấm điểm phát âm bằng mô hình ngôn ngữ lớn (LLM) và xây dựng hệ thống AI Service ttheo kiến trúc microservice, đề tài giúp củng cố và mở rộng kiến thức lý thuyết về AI cũng như cách áp dụng vào các bài toán thực tế. Bên cạnh đó, đề tài còn góp phần làm rõ quy trình xây dựng một hệ thống phần mền toàn diện gồm Frontend Next.js, Backend FastAPI và AI Service tích hợp, từ đó giúp người học có cái nhìn tổng quát và hệ thống hơn về lĩnh vực này.
+162: ⦁Đóng góp về mặt thực tiễn
+163: •Xây dựng một hệ thống hỗ trợ học tiếng Anh cho trẻ em với tính tương tác cao, góp phần nâng cao hiệu quả học tập.
+164: •Tạo ra môi trường học tập sinh động, giúp trẻ tiếp cận tiếng Anh một cách tự nhiên thông qua hình ảnh, âm thanh và tương tác với hệ thống.
+165: •Ứng dụng AI giúp cá nhân hóa quá trình học, phù hợp với khả năng và tốc độ tiếp thu của từng người học, tương tự như các nền tảng học tập trực tuyến hiện nay như Duolingo.
+166: •Góp phần hỗ trợ phụ huynh và giáo viên trong việc theo dõi và đánh giá quá trình học tập của trẻ.
+167: •Là cơ sở để phát triển và mở rộng thành các sản phẩm giáo dục thông minh trong tương lai.
+168: CHƯƠNG 1 TỔNG QUAN VỀ ĐƠN VỊ THỰC TẬP
+169: Giới thiệu về cơ sở thực tập, bao gồm: lĩnh vực hoạt động, quy mô, chức năng, các công nghệ được sử dụng, các sản phẩm ứng dụng công nghệ thông tin đã đạt được.
+170: Giới thiệu chung
+171: Quá trình hình thành và phát triển của doanh nghiệp
+172: Hình 1-1 Logo của công ty
+173: Digi Dinos là doanh nghiệp hoạt động trong lĩnh vực công nghệ thông tin, chuyên phát triển các giải pháp phần mềm và hỗ trợ chuyển đổi số cho nhiều đối tượng khách hàng trong và ngoài nước. Công ty được thành lập tại Hà Nội vào năm 2018, trong giai đoạn nhu cầu ứng dụng công nghệ và chuyển đổi số của các doanh nghiệp đang ngày càng phát triển mạnh mẽ.
+174: Ngay từ những ngày đầu hoạt động, Digi Dinos đã định hướng xây dựng môi trường làm việc chuyên nghiệp, tập trung vào chất lượng sản phẩm và trải nghiệm khách hàng. Công ty chủ yếu triển khai các dự án gia công phần mềm (outsourcing), đặc biệt hợp tác với thị trường Nhật Bản – nơi có yêu cầu cao về quy trình phát triển cũng như tiêu chuẩn chất lượng phần mềm.
+175: Bên cạnh việc mở rộng quy mô hoạt động, Digi Dinos cũng chú trọng nâng cao năng lực chuyên môn của đội ngũ kỹ sư và đầu tư vào nghiên cứu các công nghệ mới. Một số lĩnh vực được công ty quan tâm phát triển bao gồm trí tuệ nhân tạo (AI), blockchain và điện toán đám mây. Nhờ định hướng này, Digi Dinos từng bước khẳng định vị thế của mình trong lĩnh vực công nghệ thông tin tại Việt Nam.
+176: Chức năng, nhiệm vụ của đơn vị thực tập
+177: Các chức năng chính:
+178: • Digi Dinos là doanh nghiệp hoạt động trong lĩnh vực công nghệ thông tin với chức năng chính là cung cấp các giải pháp phần mềm và dịch vụ chuyển đổi số cho doanh nghiệp. Công ty đóng vai trò là đơn vị phát triển và triển khai các hệ thống công nghệ, đáp ứng nhu cầu đa dạng của khách hàng trong và ngoài nước, đặc biệt là thị trường Nhật Bản – nơi yêu cầu cao về chất lượng và quy trình làm việc.
+179: • Bên cạnh đó, Digi Dinos còn thực hiện chức năng nghiên cứu và ứng dụng các công nghệ tiên tiến như trí tuệ nhân tạo (AI), blockchain và điện toán đám mây nhằm nâng cao chất lượng sản phẩm và tối ưu hóa hiệu quả hoạt động của doanh nghiệp. Theo Gartner, việc ứng dụng các công nghệ mới như AI và cloud computing là xu hướng tất yếu giúp doanh nghiệp nâng cao năng lực cạnh tranh trong thời đại số. • Nghiên cứu và phát triển các công nghệ mới như AI, blockchain và hệ thống thông minh.
+180: • Ngoài ra, công ty còn đóng vai trò là môi trường đào tạo và phát triển nguồn nhân lực công nghệ thông tin thông qua việc tiếp nhận sinh viên thực tập, tạo điều kiện để sinh viên tiếp cận với môi trường làm việc thực tế và nâng cao kỹ năng chuyên môn.
+181: Nhiệm vụ cụ thể:
+182: •Phát triển phần mềm theo yêu cầu:
+183: Thiết kế, xây dựng và triển khai các hệ thống phần mềm (web, mobile, hệ thống doanh nghiệp) đáp ứng yêu cầu cụ thể của khách hàng, đảm bảo tính ổn định, bảo mật và khả năng mở rộng của hệ thống.
+184: •Tư vấn và triển khai giải pháp công nghệ:
+185: Phân tích nhu cầu của khách hàng, đề xuất các giải pháp công nghệ phù hợp và tối ưu chi phí, đồng thời hỗ trợ triển khai và vận hành hệ thống trong thực tế.
+186: •Nghiên cứu và ứng dụng công nghệ mới (R&D):
+187: Liên tục nghiên cứu, cập nhật và thử nghiệm các công nghệ mới như AI, blockchain, cloud computing nhằm nâng cao chất lượng sản phẩm và tạo ra các giải pháp sáng tạo.
+188: •Kiểm thử và đảm bảo chất lượng phần mềm:
+189: Thực hiện kiểm thử phần mềm (manual testing, automation testing) nhằm phát hiện và khắc phục lỗi, đảm bảo sản phẩm đạt tiêu chuẩn chất lượng trước khi bàn giao cho khách hàng.
+190: •Bảo trì và hỗ trợ hệ thống:
+191: Theo dõi, bảo trì và nâng cấp hệ thống sau khi triển khai; hỗ trợ khách hàng trong quá trình sử dụng, đảm bảo hệ thống hoạt động ổn định và hiệu quả.
+192: •Quản lý và triển khai dự án:
+193: Tổ chức, phân công công việc trong nhóm dự án; theo dõi tiến độ, đảm bảo dự án được thực hiện đúng kế hoạch và đáp ứng yêu cầu đề ra.
+194: •Đào tạo và phát triển nhân lực:
+195: Tổ chức đào tạo nội bộ, hướng dẫn thực tập sinh và nhân viên mới; nâng cao trình độ chuyên môn và kỹ năng làm việc cho đội ngũ nhân sự.
+196: Lĩnh vực hoạt động của doanh nghiệp
+197: Digi Dinos hoạt động chủ yếu trong lĩnh vực công nghệ thông tin, tập trung vào phát triển phần mềm và cung cấp các giải pháp công nghệ hiện đại cho doanh nghiệp. Các lĩnh vực hoạt động chính của công ty bao gồm:
+198: •Phát triển phần mềm (Software Development):
+199: Công ty chuyên thiết kế và xây dựng các hệ thống phần mềm như website, ứng dụng di động và hệ thống quản lý doanh nghiệp. Các sản phẩm được phát triển theo yêu cầu của khách hàng, đảm bảo tính linh hoạt, khả năng mở rộng và hiệu suất cao.
+200: •Gia công phần mềm (Outsourcing):
+201: Digi Dinos cung cấp dịch vụ gia công phần mềm cho các đối tác quốc tế, đặc biệt là thị trường Nhật Bản. Công ty tuân thủ các quy trình phát triển phần mềm chuyên nghiệp, đảm bảo chất lượng và tiến độ dự án theo yêu cầu khắt khe của khách hàng.
+202: •Trí tuệ nhân tạo (AI):
+203: Công ty nghiên cứu và ứng dụng AI trong các sản phẩm như chatbot, hệ thống xử lý ngôn ngữ tự nhiên (NLP) và nhận diện giọng nói. Theo McKinsey & Company, việc ứng dụng AI giúp doanh nghiệp nâng cao hiệu suất và tạo ra giá trị mới trong quá trình chuyển đổi số.
+204: •Công nghệ Blockchain:
+205: Phát triển các ứng dụng liên quan đến blockchain như NFT, ví điện tử và các hệ thống phi tập trung (Web3), nhằm đáp ứng xu hướng công nghệ mới trên thị trường.
+206: •Thiết kế giao diện người dùng (UI/UX Design):
+207: Thiết kế giao diện thân thiện, dễ sử dụng và tối ưu trải nghiệm người dùng, đặc biệt đối với các sản phẩm hướng tới khách hàng cuối
+208: •Kiểm thử phần mềm (Software Testing):
+209: Thực hiện kiểm thử phần mềm nhằm đảm bảo chất lượng sản phẩm trước khi triển khai, bao gồm kiểm thử thủ công và kiểm thử tự động.
+210: •Tư vấn và chuyển đổi số (Digital Transformation):
+211: Cung cấp các giải pháp giúp doanh nghiệp chuyển đổi số, tối ưu quy trình hoạt động và nâng cao hiệu quả kinh doanh thông qua việc ứng dụng công nghệ thông tin. Theo IBM, chuyển đổi số là yếu tố then chốt giúp doanh nghiệp nâng cao năng lực cạnh tranh trong thời đại công nghệ số.
+212: Cơ cấu tổ chức, quản lý của doanh nghiệp
+213: Hình 1-2 Sơ đồ tổ chức của Digi
+214: Cơ cấu tổ chức của Digi Dinos được xây dựng theo mô hình phân cấp kết hợp quản lý theo dự án, phù hợp với đặc thù của doanh nghiệp hoạt động trong lĩnh vực phát triển phần mềm. Mô hình này giúp công ty đảm bảo tính linh hoạt trong triển khai dự án, đồng thời nâng cao hiệu quả phối hợp giữa các bộ phận chức năng.
+215: • Ban Giám đốc:
+216: Là bộ phận quản lý cấp cao nhất, chịu trách nhiệm xây dựng chiến lược phát triển, định hướng công nghệ và đưa ra các quyết định quan trọng liên quan đến hoạt động kinh doanh của công ty. Ban Giám đốc đồng thời giám sát toàn bộ hoạt động của các phòng ban nhằm đảm bảo mục tiêu chung của doanh nghiệp.
+217: •Phòng Kỹ thuật (Development):
+218: Đóng vai trò cốt lõi trong hoạt động của công ty, chịu trách nhiệm phát triển các sản phẩm phần mềm. Bộ phận này thực hiện các công việc như phân tích yêu cầu, thiết kế hệ thống, lập trình và triển khai dự án. Các vị trí trong phòng bao gồm Frontend Developer, Backend Developer, Mobile Developer và AI Engineer.
+219: Phòng kiểm thử (QA/QC)
+220: Chịu trách nhiệm kiểm tra và đảm bảo chất lượng sản phẩm phần mềm trước khi bàn giao cho khách hàng. Bộ phận này thực hiện kiểm thử chức năng, kiểm thử hiệu năng và kiểm thử bảo mật nhằm phát hiện lỗi và đảm bảo hệ thống hoạt động ổn định.
+221: •Phòng Kinh doanh (Business/Marketing):
+222: Đảm nhiệm việc tìm kiếm khách hàng, mở rộng thị trường và duy trì mối quan hệ với đối tác. Bộ phận này đóng vai trò trung gian giữa khách hàng và đội ngũ kỹ thuật, đảm bảo yêu cầu của khách hàng được truyền đạt đầy đủ và chính xác
+223: •Phòng Nhân sự (Human Resources – HR):
+224: Phụ trách công tác tuyển dụng, đào tạo và quản lý nhân sự trong công ty. Đồng thời, bộ phận này cũng xây dựng môi trường làm việc chuyên nghiệp, hỗ trợ phát triển năng lực cho nhân viên và thực tập sinh.
+225: •Các phòng ban chức năng:
+226: •Bộ phận Frontend Developer:
+227: Chịu trách nhiệm xây dựng giao diện người dùng (UI) của hệ thống. Bộ phận này sử dụng các công nghệ như HTML, CSS, JavaScript và các framework hiện đại để đảm bảo giao diện thân thiện, dễ sử dụng và tối ưu trải nghiệm người dùng.
+228: •Bộ phận Backend Developer:
+229: Phụ trách xử lý logic nghiệp vụ, xây dựng hệ thống máy chủ (server), cơ sở dữ liệu và API. Đây là bộ phận đảm bảo hệ thống hoạt động ổn định, bảo mật và có khả năng xử lý dữ liệu hiệu quả.
+230: • Bộ phận Mobile Developer:
+231: Chịu trách nhiệm phát triển các ứng dụng di động trên nền tảng Android và iOS, đáp ứng nhu cầu sử dụng ngày càng cao của người dùng trên thiết bị di động .
+232: b. Cơ cấu các bộ phận và nhiệm vụ chính
+233: •Trụ sở chính tại Hà Nội: Trung tâm điều hành chính của Digi Dinos, đảm nhiệm vai trò quản lý, điều phối hoạt động và triển khai các dự án phần mềm.
+234: •Các khối chức năng chính:
+235: •Khối Kinh doanh và Dự án:
+236: •Phòng Kinh doanh: Phụ trách tìm kiếm khách hàng, phát triển thị trường và duy trì quan hệ với đối tác.
+237: • Bộ phận Quản lý Dự án (Project Manager): Lập kế hoạch, phân công công việc và theo dõi tiến độ thực hiện dự án..
+238: •Khối Kỹ thuật :
+239: •Phòng Kỹ thuật (Development): Thiết kế, lập trình và triển khai các hệ thống phần mềm.
+240: •Bộ phận QA/QC: Kiểm thử, đảm bảo chất lượng sản phẩm trước khi bàn giao.
+241: •Khối Công nghệ :
+242: •Bộ phận Frontend Developer: Xây dựng giao diện người dùng.
+243: •Bộ phận Backend Developer: Xử lý dữ liệu và xây dựng hệ thống máy chủ.
+244: •Bộ phận Mobile Developer: Phát triển ứng dụng di động.
+245: • Bộ phận DevOps: Triển khai và vận hành hệ thống.
+246: • Khối Hành chính và Nhân sự:
+247: • Phòng Nhân sự (HR): Tuyển dụng, đào tạo và quản lý nhân sự.
+248: • Bộ phận Hành chính: Quản lý hồ sơ, tài sản và hỗ trợ hoạt động nội bộ.
+249: c. Chức năng và nhiệm vụ của các đơn vị thành viên
+250: • Ban Giám đốc: Định hướng chiến lược, quản lý và điều hành toàn bộ hoạt động của công ty.
+251: •Bộ phận Quản lý Dự án: Điều phối các dự án, đảm bảo tiến độ và chất lượng công việc.
+252: •Các phòng ban chức năng: Thực hiện nhiệm vụ chuyên môn theo sự phân công, đảm bảo hoạt động hiệu quả và đồng bộ
+253: Vị trí thực tập
+254: Vị trí thực tập tại công ty: Thực tập sinh Developer
+255: Trong thời gian thực tập tại Digi Dinos, em được phân công làm việc tại bộ phận Kỹ thuật (Development) với vị trí Thực tập sinh Developer.
+256: Công việc chính của em bao gồm:
+257: Tham gia tìm hiểu quy trình phát triển phần mềm tại công ty.
+258: Xây dựng các chức năng của hệ thống phần mềm.
+259: Thiết kế và phát triển giao diện người dùng cho ứng dụng.
+260: Tìm hiểu và ứng dụng các công nghệ trí tuệ nhân tạo (AI) vào hệ thống học tiếng Anh cho trẻ em.
+261: Clone giao diện trang web meigen ai
+262: Tìm hiểu framework NextJS và ứng dụng tạo giao diện meigen ai
+263: Tìm hiểu Qwen3-ARS, Qwen3-TTS
+264: Đề tài thực tập
+265: Xây dựng hệ thống hỗ trợ học tiếng Anh cho trẻ em ứng dụng Trí tuệ nhân tạo (AI)
+266: Lịch làm việc
+267: Bảng 1-1 Lịch làm việc
+268: Tuần
+269: Thời gian
+270: Nội dung công việc
+271: Nơi thực hiện
+272: 1
+273: 02/03-08/03
+274: Tìm hiểu về dự án manavis
+275: Công ty Digi Dinos
+276: Tìm hiểu về meigen ai
+277: Tìm hiểu về quy trình phát triển phần mềm
+278: 2
+279: 09/03 -15/03
+280: On job trainning tìm hiểu về dự án Speak Joy
+281: Nghiên cứu đề tài, tìm hiểu về AI và ứng dụng trong học tiếng Anh
+282: Công ty Digi Dinos
+283: 3
+284: 16/03-22/03
+285: Phân tích yêu cầu hệ thống
+286: Công ty Digi Dinos
+287: 4
+288: 23/03-29/03
+289: Thiết kế giao diện (UI/UX) cho hệ thống
+290: Công ty Digi Dinos
+291: 5
+292: 30/03-05/04
+293: Xây dựng chức năng từ vựng
+294: Công ty Digi Dinos
+295: 6
+296: 06/04-12/04
+297: Phát triển chức năng luyện phát âm (AI)
+298: Công ty Digi Dinos
+299: 7
+300: 13/04-19/04
+301: Xây dựng bài tập và chức năng tương tác
+302: Công ty Digi Dinos
+303: 8
+304: 20/04-26/04
+305: Kiểm thử hệ thống và sửa lỗi
+306: Công ty Digi Dinos
+307: 9
+308: 27/04-03/05
+309: Hoàn thiện hệ thống
+310: Công ty Digi Dinos
+311: 10
+312: 04/05-11/05
+313: Viết báo cáo và chuẩn bị trình bày
+314: Công ty Digi Dinos
+315: CHƯƠNG 2 NỘI DUNG THỰC TẬP
+316: Nhiệm vụ được giao
+317: Trong thời gian thực tập tại Digi Dinos, em được giao thực hiện các nhiệm vụ sau:
+318: Tìm hiểu quy trình phát triển phần mềm và môi trường làm việc tại công ty.
+319: Tìm hiểu về dự án Manavis
+320: Tìm hiểu về dự án Meigen ai
+321: Nghiên cứu đề tài “Xây dựng hệ thống hỗ trợ học tiếng Anh cho trẻ em ứng dụng Trí tuệ nhân tạo (AI)”.
+322: Tìm hiểu các công nghệ liên quan như nhận diện giọng nói tự động (ASR), tổng hợp giọng nói (TTS), chấm điểm phát âm LLM và các công cụ hỗ trợ phát triển phần mềm hiện đại (Next.js, FastAPI, Docker)
+323: Tham gia phân tích yêu cầu và thiết kế hệ thống cho ứng dụng học tiếng Anh.
+324: Xây dựng các chức năng của hệ thống như học từ vựng, luyện phát âm và làm bài tập tương tác.
+325: Tham gia kiểm thử, phát hiện và sửa lỗi trong quá trình phát triển phần mềm.
+326: Phối hợp với các thành viên trong nhóm và các bộ phận liên quan để hoàn thành nhiệm vụ được giao.
+327: Giải pháp thực hiện
+328: Trong quá trình thực tập tại Digi Dinos, em đã thực hiện các công việc sau:
+329: Tìm hiểu về quy trình phát triển phần mềm và cách thức làm việc trong môi trường doanh nghiệp.
+330: Nghiên cứu các công nghệ liên quan đến trí tuệ nhân tạo (AI) như nhận diện giọng nói tự động (ASR), tổng hợp giọng nói (TTS), chấm điểm phát âm bằng LLM và tích hợp mô hình AI provider (Gemini, OpenAi, Qwen)
+331: Phân tích yêu cầu hệ thống và xây dựng ý tưởng cho ứng dụng học tiếng Anh dành cho trẻ em.
+332: Thiết kế giao diện người dùng (UI) đơn giản, thân thiện và phù hợp với đối tượng trẻ em.
+333: Xây dựng các chức năng cơ bản như học từ vựng, hiển thị hình ảnh và phát âm từ vựng.
+334: Phát triển chức năng luyện phát âm bằng cách tích hợp công nghệ nhận diện giọng nói.
+335: Xây dựng các bài tập tương tác giúp người học ghi nhớ từ vựng hiệu quả hơn.
+336: Thực hiện kiểm thử hệ thống, phát hiện và sửa lỗi trong quá trình phát triển.
+337: Hoàn thiện các chức năng của hệ thống và tối ưu hiệu năng hoạt động.
+338: Viết tài liệu báo cáo và tổng hợp kết quả thực tập.
+339: Công việc thực hiện
+340: Các công việc đã thực hiện trong đợt thực tập tại doanh nghiệp:
+341: Tìm hiểu về môi trường làm việc và định hướng nghề nghiệp trong lĩnh vực phát triển phần mềm.
+342: Tìm hiểu về vai trò của một Developer trong doanh nghiệp.
+343: Giới thiệu về các công nghệ và công cụ phát triển phần mềm phổ biến.
+344: Đào tạo kiến thức chuyên môn được chia thành 2 giai đoạn.
+345: •Giai đoạn 1:
+346: Nghiên cứu các kiến thức cơ bản và nâng cao về phát triển phần mềm web hiện đại, bao gồm Next.js, React, TypeScript, Tailwind CSS và cách xây dựng giao diện người dùng theo mô hình component-based.
+347: Tìm hiểu các khái niệm cơ bản về trí tuệ nhân tạo (AI), nhận diện giọng nói tự động (ASR), tổng hợp giọng nói (TTS) và mô hình ngôn ngữ lớn (LLM) ứng dụng trong hệ thống luyện nói tiếng Anh.
+348: Viết báo cáo tổng hợp nội dung đã học và các công nghệ được áp dụng trong dự án Speak Joy.
+349: Hoàn thành các bài tập cơ bản liên quan đến giao diện và xử lý dữ liệu.
+350: Giai đoạn 2:
+351: Nghiên cứu kiến thức nâng cao về phát triển ứng dụng và tích hợp AI.
+352: Xây dựng các chức năng chính cho hệ thống học tiếng Anh (từ vựng, phát âm, bài tập).
+353: Tích hợp công nghệ nhận diện giọng nói vào hệ thống.
+354: Kiểm thử, sửa lỗi và hoàn thiện hệ thống.
+355: Nội dung lý thuyết nghiên cứu:
+356: Công nghệ phát triển phần mềm (Software Development)
+357: Frontend
+358: Frontend của hệ thống được xây dựng bằng Next.js (App Router) kết hợp React nhằm phát triển giao diện người dùng hiện đại và tối ưu hiệu năng [1][2]. TypeScript được sử dụng để tăng tính an toàn kiểu dữ liệu và hỗ trợ bảo trì source code dễ dàng hơn [3].
+359: Dự án sử dụng Tailwind CSS 4 để xây dựng giao diện theo hướng utility-first, giúp tăng tốc độ phát triển UI và đảm bảo tính đồng nhất trong thiết kế [4]. Ngoài ra, Zustand được sử dụng để quản lý state phía client do có cấu trúc đơn giản và phù hợp với ứng dụng React hiện đại [5].
+360: Đối với chức năng luyện nói, hệ thống sử dụng react-media-recorder để ghi âm trực tiếp trên trình duyệt và wavesurfer.js để hiển thị waveform audio trong quá trình luyện tập [6][7].
+361: Backend
+362: Backend được phát triển bằng FastAPI trên nền tảng Python 3.11 nhằm xây dựng REST API cho các chức năng như xác thực người dùng, quản lý học sinh, chủ đề học tập và lịch sử luyện tập [8].
+363: Uvicorn được sử dụng làm ASGI server để vận hành ứng dụng FastAPI [9]. Pydantic hỗ trợ validate dữ liệu đầu vào và đầu ra nhằm đảm bảo tính ổn định của hệ thống [10].
+364: Hệ thống sử dụng PyJWT kết hợp bcrypt để xác thực và mã hóa mật khẩu người dùng [11]. Ngoài ra, psycopg2 được sử dụng để kết nối PostgreSQL (Supabase), trong khi httpx hỗ trợ giao tiếp với AI Service bên ngoài [12][13].
+365: Cơ sở dữ liệu
+366: Hệ thống sử dụng PostgreSQL trên nền tảng Supabase để lưu trữ dữ liệu người dùng và dữ liệu học tập [14]. Cơ sở dữ liệu bao gồm thông tin tài khoản, hồ sơ học sinh, chủ đề học tập, lịch sử buổi học, điểm số luyện nói và cấu hình AI theo từng học sinh.
+367: Việc sử dụng Supabase giúp đơn giản hóa quá trình quản lý dữ liệu, đồng thời hỗ trợ khả năng mở rộng và triển khai hệ thống trong môi trường cloud.
+368: Công nghệ trí tuệ nhân tạo (AI)
+369: Xử lý giọng nói và chấm điểm phát âm bằng AI
+370: Hệ thống AI Service là thành phần cốt lõi của dự án Speak Joy, chịu trách nhiệm xử lý các chức năng liên quan đến nhận diện giọng nói và phản hồi thông minh cho học sinh. Khi người dùng thực hiện luyện nói, hệ thống sẽ ghi âm trực tiếp trên trình duyệt và gửi dữ liệu audio đến AI Service để xử lý.
+371: Đầu tiên, audio được chuyển đổi thành văn bản thông qua công nghệ nhận diện giọng nói tự động (Automatic Speech Recognition – ASR). Nội dung văn bản sau khi nhận diện sẽ được so sánh với câu mẫu nhằm đánh giá độ chính xác của phát âm.
+372: Tiếp theo, hệ thống sử dụng mô hình ngôn ngữ lớn (LLM) như Gemini, OpenAI hoặc Qwen để phân tích lỗi phát âm, tạo phản hồi cá nhân hóa và đưa ra gợi ý cải thiện phù hợp với người học. Sau khi xử lý hoàn tất, phản hồi được chuyển đổi thành giọng nói bằng công nghệ Text-to-Speech (TTS) nhằm tăng tính tương tác trong quá trình học tập.
+373: Ngoài ra, AI Service hỗ trợ cả giao thức HTTP và WebSocket để tối ưu khả năng giao tiếp thời gian thực giữa frontend và hệ thống AI. Việc tích hợp pipeline ASR → Pronunciation Scoring → LLM Feedback → TTS giúp hệ thống tạo ra trải nghiệm luyện nói trực quan và thông minh hơn so với các ứng dụng học tiếng Anh truyền thống.
+374: Kiến trúc tổng thể của hệ thống
+375: Hệ thống Speak Joy được xây dựng theo mô hình tách biệt giữa frontend, backend và AI Service nhằm đảm bảo khả năng mở rộng, dễ bảo trì và thuận tiện trong quá trình phát triển.
+376: Frontend được xây dựng bằng Next.js kết hợp React và TypeScript nhằm cung cấp giao diện trực quan cho phụ huynh và học sinh. Hệ thống frontend chịu trách nhiệm hiển thị giao diện học tập, quản lý trạng thái người dùng, ghi âm giọng nói và hiển thị kết quả phản hồi từ AI.
+377: Backend được phát triển bằng FastAPI trên nền tảng Python 3.11 nhằm cung cấp REST API cho toàn bộ hệ thống. Backend chịu trách nhiệm xử lý logic nghiệp vụ, xác thực người dùng, quản lý học sinh, quản lý chủ đề học tập và kết nối với AI Service.
+378: AI Service là thành phần quan trọng nhất của hệ thống, đảm nhiệm xử lý nhận diện giọng nói tự động (ASR), chấm điểm phát âm, tạo phản hồi thông minh bằng mô hình ngôn ngữ lớn (LLM) và tổng hợp giọng nói bằng công nghệ Text-to-Speech (TTS).
+379: Dữ liệu của hệ thống được lưu trữ trên PostgreSQL thông qua nền tảng Supabase nhằm đảm bảo khả năng lưu trữ ổn định và hỗ trợ mở rộng trong tương lai.
+380: Kiến trúc phân tách thành nhiều service giúp hệ thống dễ dàng nâng cấp từng thành phần mà không ảnh hưởng đến toàn bộ ứng dụng. Ngoài ra, việc sử dụng Docker giúp đồng nhất môi trường phát triển và hỗ trợ triển khai hệ thống thuận tiện hơn.
+381: Quy trình xử lý luyện phát âm bằng AI
+382: Quá trình luyện phát âm trong hệ thống Speak Joy được xây dựng theo pipeline xử lý AI nhằm hỗ trợ học sinh luyện nói tiếng Anh theo thời gian thực.
+383: Đầu tiên, học sinh lựa chọn chủ đề học tập và thực hiện ghi âm giọng nói trực tiếp trên trình duyệt thông qua microphone. Dữ liệu audio sau khi ghi âm sẽ được gửi đến AI Service để xử lý.
+384: Tại AI Service, hệ thống sử dụng công nghệ nhận diện giọng nói tự động (ASR – Automatic Speech Recognition) để chuyển đổi giọng nói thành văn bản. Nội dung văn bản sau đó được so sánh với câu mẫu nhằm đánh giá độ chính xác của phát âm.
+385: Tiếp theo, mô hình ngôn ngữ lớn (LLM) như Gemini hoặc OpenAI sẽ phân tích lỗi phát âm và tạo phản hồi phù hợp cho người học. Hệ thống có thể đưa ra các nhận xét như phát âm đúng, sai hoặc gợi ý cách cải thiện khả năng nói tiếng Anh.
+386: Sau khi hoàn tất quá trình phân tích, phản hồi sẽ được chuyển đổi thành giọng nói bằng công nghệ Text-to-Speech (TTS) nhằm tăng tính tương tác trong quá trình học tập.
+387: Cuối cùng, frontend sẽ hiển thị điểm số phát âm, nội dung phản hồi và audio phản hồi từ AI để học sinh dễ dàng theo dõi kết quả luyện tập của mình.
+388: Pipeline ASR → Pronunciation Scoring → LLM → TTS là thành phần nổi bật của hệ thống Speak Joy, giúp tạo ra trải nghiệm học tập trực quan và tương tác hơn so với các hệ thống học tiếng Anh truyền thống.
+389: Thiết kế giao diện người dùng (UI/UX)
+390: Giao diện hệ thống được thiết kế theo hướng thân thiện với trẻ em, sử dụng màu sắc trực quan và bố cục đơn giản nhằm tạo cảm giác hứng thú trong quá trình học tập.
+391: Ngoài ra, hệ thống được xây dựng với luồng sử dụng rõ ràng, dễ hiểu và hạn chế các thao tác phức tạp nhằm giúp học sinh và phụ huynh dễ dàng tương tác với ứng dụng.
+392: Công cụ và môi trường phát triển
+393: GitLab: Quản lý mã nguồn và hỗ trợ làm việc nhóm trong quá trình phát triển dự án.
+394: Antigravity: Môi trường lập trình và hỗ trợ phát triển phần mềm được sử dụng trong quá trình xây dựng hệ thống.
+395: Docker: Hỗ trợ đóng gói và triển khai các service của hệ thống trong môi trường đồng nhất.
+396: Các thư viện và API AI: Hỗ trợ xử lý nhận diện giọng nói (ASR), mô hình ngôn ngữ lớn (LLM) và tổng hợp giọng nói (TTS).
+397: Môi trường phát triển và triển khai hệ thống
+398: Trong quá trình phát triển dự án Speak Joy, nhóm sử dụng nhiều công cụ và môi trường hỗ trợ nhằm đảm bảo quá trình lập trình, kiểm thử và triển khai hệ thống diễn ra ổn định.
+399: Môi trường phát triển chính được sử dụng là Antigravity nhằm hỗ trợ lập trình frontend, backend và AI Service. Việc sử dụng môi trường phát triển thống nhất giúp quá trình làm việc nhóm trở nên thuận tiện và hạn chế lỗi phát sinh do khác biệt cấu hình giữa các thành viên.
+400: Hệ thống sử dụng GitLab để quản lý mã nguồn và theo dõi lịch sử thay đổi source code trong quá trình phát triển. Các thành viên trong nhóm có thể dễ dàng phối hợp, cập nhật tính năng mới và xử lý lỗi thông qua quy trình quản lý phiên bản.
+401: Để hỗ trợ triển khai hệ thống, nhóm sử dụng Docker nhằm đóng gói các service như frontend, backend, AI Service và cơ sở dữ liệu thành các container độc lập. Điều này giúp đảm bảo tính đồng nhất của môi trường chạy ứng dụng trên nhiều thiết bị khác nhau.
+402: Frontend của hệ thống được triển khai bằng Next.js development server trong giai đoạn phát triển, trong khi backend FastAPI được vận hành bằng Uvicorn để xử lý các API request từ frontend và AI Service.
+403: Cơ sở dữ liệu PostgreSQL được triển khai trên nền tảng Supabase nhằm hỗ trợ lưu trữ dữ liệu người dùng, lịch sử học tập và cấu hình AI của hệ thống.
+404: Ngoài ra, hệ thống còn tích hợp các API AI bên ngoài như OpenAI và Gemini nhằm phục vụ các chức năng nhận diện giọng nói, phân tích phát âm và tạo phản hồi thông minh cho người học.
+405: Quy trình triển khai hệ thống bao gồm các bước:
+406: Clone source code từ GitLab.
+407: Cài đặt dependency cho frontend và backend.
+408: Cấu hình biến môi trường cho hệ thống.
+409: Khởi chạy Docker Compose để vận hành các service.
+410: Kết nối cơ sở dữ liệu PostgreSQL.
+411: Khởi động frontend, backend và AI Service.
+412: Việc sử dụng Docker giúp giảm đáng kể lỗi môi trường và hỗ trợ triển khai hệ thống nhanh chóng, thuận tiện hơn trong quá trình phát triển và kiểm thử.
+413: Phương thức làm việc
+414: Các phương thức làm việc chính:
+415: Làm việc theo nhóm: Phối hợp với các thành viên trong nhóm để phát triển dự án Speak Joy, trao đổi công việc, hỗ trợ xử lý lỗi và cùng hoàn thành các chức năng được phân công. Qua đó nâng cao kỹ năng giao tiếp và làm việc nhóm trong môi trường thực tế.
+416: Làm việc theo quy trình: Thực hiện công việc theo các giai đoạn của quy trình phát triển phần mềm gồm phân tích yêu cầu, thiết kế giao diện, lập trình, kiểm thử và hoàn thiện sản phẩm nhằm đảm bảo tiến độ và chất lượng hệ thống.
+417: Làm việc theo dự án: Tham gia trực tiếp vào dự án Speak Joy với các nhiệm vụ cụ thể liên quan đến frontend, xử lý dữ liệu và tích hợp AI Service; thực hiện công việc theo kế hoạch và thời gian được phân công.
+418: Tự học và nghiên cứu: Chủ động tìm hiểu và nghiên cứu các công nghệ mới như trí tuệ nhân tạo (AI), nhận diện giọng nói tự động (ASR), tổng hợp giọng nói (TTS), mô hình ngôn ngữ lớn (LLM), cùng các công nghệ phát triển phần mềm hiện đại như Next.js, FastAPI, Docker và PostgreSQL.
+419: Báo cáo và trao đổi công việc: Thường xuyên cập nhật tiến độ thực hiện với người hướng dẫn, trao đổi khi gặp khó khăn trong quá trình phát triển hệ thống để được hỗ trợ và cải thiện hiệu quả công việc.
+420: Quy trình thực hiện
+421: Quy trình thực hiện tuân thủ theo các bước sau:
+422: Tìm hiểu đề tài và phân tích yêu cầu: Nghiên cứu mục tiêu xây dựng hệ thống học tiếng Anh Speak Joy, xác định các chức năng chính như quản lý học sinh, học từ vựng, luyện phát âm và theo dõi tiến độ học tập.
+423: Xây dựng ý tưởng và thiết kế giao diện: Thiết kế giao diện thân thiện với trẻ em, xây dựng luồng sử dụng đơn giản và trực quan nhằm nâng cao trải nghiệm học tập cho người dùng.
+424: Lựa chọn công nghệ phát triển: Tìm hiểu và lựa chọn các công nghệ phù hợp cho hệ thống như Next.js, React, TypeScript, FastAPI, PostgreSQL, Docker và các công nghệ AI hỗ trợ ASR, TTS và LLM.
+425: Phát triển các chức năng của hệ thống: Tiến hành xây dựng các chức năng chính như đăng nhập, quản lý học sinh, học từ vựng, luyện phát âm, ghi âm giọng nói, chấm điểm phát âm và hiển thị phản hồi AI.
+426: 5. Thiết kế cơ sở dữ liệu
+427: Hệ thống Speak Joy sử dụng PostgreSQL trên nền tảng Supabase để lưu trữ và quản lý toàn bộ dữ liệu của ứng dụng. Cơ sở dữ liệu được thiết kế theo mô hình quan hệ nhằm đảm bảo tính nhất quán, dễ mở rộng và thuận tiện trong quá trình phát triển hệ thống.
+428: Bảng users lưu trữ thông tin tài khoản của phụ huynh hoặc người quản lý hệ thống. Dữ liệu bao gồm:
+429: ● ID người dùng.
+430: ● Email đăng nhập.
+431: ● Mật khẩu đã mã hóa.
+432: ● Vai trò người dùng.
+433: ● Trạng thái tài khoản.
+434: ● Thời gian tạo tài khoản.
+435: Bảng này phục vụ cho chức năng xác thực và phân quyền người dùng trong hệ thống.
+436: Bảng children lưu thông tin học sinh sử dụng hệ thống Speak Joy. Mỗi học sinh được liên kết với một tài khoản phụ huynh. Dữ liệu bao gồm:
+437: ● ID học sinh.
+438: ● ID phụ huynh (liên kết bảng users).
+439: ● Tên học sinh.
+440: ● Độ tuổi hoặc ngày sinh.
+441: ● Ảnh đại diện.
+442: ● Cấp độ học tập.
+443: ● Thời gian tạo hồ sơ.
+444: Bảng này phục vụ cho quản lý hồ sơ học sinh và cá nhân hóa lộ trình học tập.
+445: Bảng topics quản lý các chủ đề học tập trong hệ thống. Dữ liệu bao gồm:
+446: ● ID chủ đề.
+447: ● Tên chủ đề.
+448: ● Mô tả chủ đề.
+449: ● Thứ tự hiển thị.
+450: Bảng này phục vụ cho việc tổ chức nội dung học tập theo từng nhóm chủ đề.
+451: Bảng vocabulary_items lưu danh sách từ vựng theo từng chủ đề học. Dữ liệu bao gồm:
+452: ● ID từ vựng.
+453: ● ID chủ đề (liên kết bảng topics).
+454: ● Từ hoặc cụm từ.
+455: ● Nghĩa từ vựng.
+456: ● Câu ví dụ.
+457: ● Mức độ khó.
+458: Bảng này phục vụ cho chức năng học từ vựng và xây dựng nội dung luyện tập.
+459: Bảng vocabulary_assets lưu các tài nguyên đa phương tiện đi kèm từ vựng. Dữ liệu bao gồm:
+460: ● ID tài nguyên.
+461: ● ID từ vựng (liên kết bảng vocabulary_items).
+462: ● Loại tài nguyên (ảnh, âm thanh...).
+463: ● Đường dẫn tệp hoặc URL.
+464: ● Thông tin mô tả tài nguyên.
+465: Bảng này phục vụ cho việc tăng tính trực quan và hỗ trợ luyện nghe, luyện phát âm.
+466: Bảng vocabulary_questions lưu các câu hỏi luyện tập liên quan đến từ vựng. Dữ liệu bao gồm:
+467: ● ID câu hỏi.
+468: ● ID từ vựng hoặc chủ đề liên quan.
+469: ● Nội dung câu hỏi.
+470: ● Loại câu hỏi.
+471: ● Đáp án đúng.
+472: ● Dữ liệu chấm điểm.
+473: Bảng này phục vụ cho chức năng kiểm tra và đánh giá khả năng ghi nhớ từ vựng.
+474: Bảng daily_missions lưu danh sách nhiệm vụ học tập hằng ngày do hệ thống định nghĩa. Dữ liệu bao gồm:
+475: ● ID nhiệm vụ.
+476: ● Tên nhiệm vụ.
+477: ● Mô tả nhiệm vụ.
+478: ● Loại nhiệm vụ.
+479: ● Điều kiện hoàn thành.
+480: ● Trạng thái kích hoạt.
+481: Bảng này phục vụ cho việc tạo mục tiêu học tập mỗi ngày cho học sinh.
+482: Bảng child_daily_missions lưu thông tin giao nhiệm vụ ngày cho từng học sinh. Dữ liệu bao gồm:
+483: ● ID bản ghi giao nhiệm vụ.
+484: ● ID học sinh (liên kết bảng children).
+485: ● ID nhiệm vụ (liên kết bảng daily_missions).
+486: ● Ngày áp dụng nhiệm vụ.
+487: ● Trạng thái hoàn thành.
+488: ● Tiến độ thực hiện.
+489: ● Thời gian hoàn thành.
+490: Bảng này phục vụ cho việc theo dõi tình trạng thực hiện nhiệm vụ hằng ngày của từng học sinh.
+491: Bảng child_daily_activity lưu thống kê hoạt động học tập hằng ngày của học sinh. Dữ liệu bao gồm:
+492: ● ID hoạt động ngày.
+493: ● ID học sinh (liên kết bảng children).
+494: ● Ngày ghi nhận.
+495: ● Tổng thời gian học.
+496: ● Số bài hoặc phiên đã hoàn thành.
+497: ● Điểm trung bình trong ngày.
+498: Bảng này phục vụ cho báo cáo tiến độ học tập theo ngày.
+499: Bảng learning_sessions lưu thông tin từng phiên học hoặc luyện tập của học sinh. Dữ liệu bao gồm:
+500: ● ID phiên học.
+501: ● ID học sinh (liên kết bảng children).
+502: ● ID chủ đề hoặc nội dung học.
+503: ● Thời gian bắt đầu phiên học.
+504: ● Thời gian kết thúc phiên học.
+505: ● Tổng thời lượng học.
+506: ● Điểm đánh giá phát âm hoặc tổng hợp.
+507: ● Trạng thái hoàn thành phiên học.
+508: Bảng này phục vụ cho việc lưu lịch sử học tập và đánh giá hiệu quả học theo từng phiên.
+509: Bảng session_interactions lưu chi tiết các lượt tương tác trong mỗi phiên học. Dữ liệu bao gồm:
+510: ● ID tương tác.
+511: ● ID phiên học (liên kết bảng learning_sessions).
+512: ● Nội dung câu hỏi hoặc prompt.
+513: ● Câu trả lời của học sinh.
+514: ● Phản hồi từ AI.
+515: ● Điểm đánh giá theo lượt.
+516: ● Thời điểm tương tác.
+517: Bảng này phục vụ cho phân tích chất lượng học tập và cải thiện phản hồi AI.
+518: Bảng lesson_progress lưu tiến độ học bài của học sinh theo từng nội dung. Dữ liệu bao gồm:
+519: ● ID tiến độ.
+520: ● ID học sinh (liên kết bảng children).
+521: ● ID bài học hoặc chủ đề.
+522: ● Tỷ lệ hoàn thành.
+523: ● Điểm gần nhất hoặc điểm tốt nhất.
+524: ● Trạng thái học tập.
+525: ● Thời gian cập nhật gần nhất.
+526: Bảng này phục vụ cho việc theo dõi lộ trình học cá nhân và hiển thị tiến bộ học tập.
+527: Bảng media_assets lưu kho tài nguyên media dùng chung trong hệ thống. Dữ liệu bao gồm:
+528: ● ID tài nguyên media.
+529: ● Loại tệp (ảnh, âm thanh, video).
+530: ● Đường dẫn lưu trữ hoặc URL.
+531: ● Định dạng và kích thước tệp.
+532: ● Thông tin nguồn hoặc bản quyền.
+533: ● Thời gian tạo tài nguyên.
+534: Bảng này phục vụ cho quản lý tập trung tài nguyên media phục vụ nội dung học.
+535: Bảng user_ai_configs lưu thông tin cấu hình AI theo người dùng hoặc học sinh. Dữ liệu bao gồm:
+536: ● ID cấu hình AI.
+537: ● ID người dùng hoặc học sinh liên kết.
+538: ● Nhà cung cấp AI.
+539: ● Model AI sử dụng.
+540: ● Giọng đọc TTS.
+541: ● Thiết lập phản hồi AI.
+542: ● Trạng thái kích hoạt cấu hình.
+543: ● Thời gian cập nhật cấu hình.
+544: Bảng này phục vụ cho việc cá nhân hóa trải nghiệm học tập và tối ưu phản hồi AI theo từng hồ sơ.
+545: Mô tả các API chính của hệ thống
+546: Hệ thống Speak Joy sử dụng kiến trúc REST API để giao tiếp giữa frontend, backend và AI Service. Các API được tổ chức theo từng nhóm chức năng nhằm đảm bảo tính rõ ràng và thuận tiện trong quá trình bảo trì hệ thống.
+547: API xác thực người dùng
+548: Nhóm API xác thực được sử dụng cho chức năng đăng nhập và quản lý tài khoản người dùng.
+549: Các chức năng chính bao gồm:
+550: Đăng ký tài khoản.
+551: Đăng nhập hệ thống.
+552: Xác thực JWT token.
+553: Đăng xuất tài khoản.
+554: API quản lý học sinh
+555: API quản lý học sinh cho phép phụ huynh tạo và chỉnh sửa hồ sơ học sinh trong hệ thống.
+556: Các chức năng gồm:
+557: Tạo hồ sơ học sinh.
+558: Cập nhật thông tin học sinh.
+559: Xóa hồ sơ học sinh.
+560: Lấy danh sách học sinh.
+561: API chủ đề học tập
+562: Nhóm API này phục vụ cho việc hiển thị nội dung học tập trên giao diện hệ thống.
+563: Các chức năng bao gồm:
+564: Lấy danh sách chủ đề học tập.
+565: Lấy nội dung bài học.
+566: Lấy danh sách từ vựng và câu luyện nói.
+567: API phiên học tập
+568: API phiên học tập chịu trách nhiệm lưu trữ kết quả luyện tập và lịch sử học tập của học sinh.
+569: Bao gồm:
+570: Tạo session học tập mới.
+571: Lưu điểm phát âm.
+572: Lưu phản hồi từ AI.
+573: Lấy lịch sử học tập.
+574: API AI Service
+575: Đây là nhóm API quan trọng nhất của hệ thống, phục vụ cho việc xử lý AI và luyện phát âm.
+576: Các chức năng chính gồm:
+577: Gửi audio đến AI Service.
+578: Nhận kết quả nhận diện giọng nói (ASR).
+579: Chấm điểm phát âm.
+580: Tạo phản hồi bằng mô hình ngôn ngữ lớn (LLM).
+581: Trả về audio phản hồi bằng TTS.
+582: Việc tổ chức API theo từng module giúp hệ thống dễ dàng bảo trì, mở rộng và nâng cấp trong tương lai.
+583: 6. Tích hợp và kiểm thử hệ thống: Kết nối frontend, backend và AI Service; thực hiện kiểm tra chức năng, xử lý lỗi phát sinh và tối ưu luồng hoạt động của hệ thống trong quá trình phát triển.
+584: 7. Hoàn thiện và triển khai hệ thống: Tối ưu hiệu năng ứng dụng, hoàn thiện giao diện, chuẩn bị tài liệu kỹ thuật và tổng hợp báo cáo kết quả thực tập.
+585: Kết quả đạt được
+586: Sau thời gian thực tập tại Digi Dinos, em đã đạt được nhiều kết quả quan trọng cả về kiến thức chuyên môn, kỹ năng làm việc và kinh nghiệm thực tế như sau:
+587: Hiểu rõ môi trường làm việc thực tế trong doanh nghiệp: Em đã làm quen với môi trường làm việc chuyên nghiệp, hiểu được cách tổ chức công việc, quy trình phối hợp giữa các bộ phận và cách vận hành của một công ty công nghệ thông tin.
+588: Nắm vững quy trình phát triển phần mềm:
+589: Tiếp cận và bước đầu áp dụng các giai đoạn trong quy trình phát triển phần mềm như phân tích yêu cầu, thiết kế hệ thống, lập trình, kiểm thử và triển khai sản phẩm thực tế.
+590: Củng cố và nâng cao kiến thức lập trình:
+591: Vận dụng các kiến thức đã học vào thực tế thông qua việc phát triển các chức năng của hệ thống Speak Joy, đồng thời nâng cao kỹ năng lập trình frontend, backend và xử lý dữ liệu.
+592: Tiếp cận và ứng dụng công nghệ trí tuệ nhân tạo (AI):
+593: Tìm hiểu các khái niệm cơ bản về AI, xử lý ngôn ngữ tự nhiên (NLP), nhận diện giọng nói tự động (ASR), tổng hợp giọng nói (TTS) và bước đầu tích hợp vào hệ thống học tiếng Anh cho trẻ em.
+594: Xây dựng được sản phẩm thực tế:
+595: Em đã tham gia phát triển một số chức năng chính của hệ thống như:
+596: Chức năng phát âm từ vựng
+597: Chức năng luyện phát âm bằng giọng nói
+598: Các bài tập tương tác hỗ trợ ghi nhớ kiến thức
+599: Hiển thị phản hồi và đánh giá phát âm từ AI Service.
+600: Thiết kế giao diện người dùng (UI):
+601: Thiết kế được giao diện đơn giản, trực quan, phù hợp với đối tượng người dùng là trẻ em, đảm bảo tính dễ sử dụng và thân thiện.
+602: Nâng cao kỹ năng phân tích và giải quyết vấn đề:
+603: Trong quá trình làm việc, em đã học được cách phân tích yêu cầu, phát hiện lỗi và đưa ra hướng giải quyết phù hợp.
+604: Phát triển kỹ năng làm việc nhóm:
+605: Biết cách phối hợp với các thành viên trong nhóm, trao đổi công việc hiệu quả và hỗ trợ lẫn nhau trong quá trình thực hiện dự án.
+606: Cải thiện kỹ năng giao tiếp và báo cáo:
+607: Thường xuyên báo cáo tiến độ công việc với người hướng dẫn, trình bày ý tưởng và tiếp nhận phản hồi để hoàn thiện công việc.
+608: Nâng cao khả năng tự học và nghiên cứu:
+609: Chủ động tìm hiểu tài liệu và công nghệ mới như Next.js, FastAPI, Docker và các công nghệ AI nhằm phục vụ quá trình phát triển dự án.
+610: Hoàn thành đầy đủ nhiệm vụ được giao:
+611: Đảm bảo tiến độ công việc theo kế hoạch, hoàn thành các yêu cầu đề ra trong quá trình thực tập.
+612: Hoàn thành báo cáo thực tập:
+613: Tổng hợp đầy đủ nội dung đã thực hiện trong quá trình thực tập và trình bày báo cáo theo đúng yêu cầu của nhà trường và doanh nghiệp.
+614: Hình 2-1 Giao diện đăng nhập đăng kí
+615: Hình2-2: Giao diện khu vực phụ huynh
+616: Hình 2-3.1: Giao diện chủ đề
+617: Hình 2-3.2: Giao diện chủ đề
+618: Hình 2-4: Giao diện lịch sử và tổng kết buổi học
+619: Hình 2-5: Giao diện Kid Bot
+620: Những vấn đề còn tồn tại
+621: Trong quá trình thực tập và thực hiện đề tài tại Digi Dinos, bên cạnh những kết quả đã đạt được, em nhận thấy vẫn còn tồn tại một số hạn chế và vấn đề cần được cải thiện như sau:
+622: Hạn chế về kiến thức chuyên môn:
+623: Mặc dù đã có nền tảng cơ bản về lập trình, tuy nhiên kiến thức chuyên sâu về AI, xử lý giọng nói và các mô hình ngôn ngữ lớn vẫn còn hạn chế. Việc tiếp cận pipeline ASR → Pronunciation Scoring → LLM → TTS còn gặp nhiều khó khăn, đặc biệt trong việc cải thiện độ chính xác của nhận diện giọng nói và cá nhân hóa phản hồi cho người học
+624: Kinh nghiệm thực tế còn ít:
+625: Do thời gian thực tập chưa dài, em chưa có nhiều cơ hội tiếp xúc với các dự án lớn hoặc các hệ thống phức tạp. Vì vậy, khả năng xử lý các tình huống thực tế và các vấn đề phát sinh trong dự án vẫn còn hạn chế.
+626: Chức năng hệ thống chưa hoàn thiện:
+627: Chức năng hệ thống chưa hoàn thiện: Hệ thống Speak Joy hiện mới tập trung vào các chức năng cốt lõi, một số tính năng nâng cao vẫn chưa được triển khai đầy đủ như:
+628: Cá nhân hóa nội dung học theo trình độ người dùng.
+629: Đánh giá phát âm với độ chính xác cao hơn.
+630: Mở rộng nội dung bài học và bài tập tương tác.
+631: Hiệu năng và tối ưu hệ thống chưa cao:
+632: Hệ thống chưa được tối ưu hoàn toàn về tốc độ xử lý và khả năng đáp ứng khi có nhiều người dùng truy cập đồng thời. Một số chức năng AI vẫn có độ trễ trong quá trình xử lý audio và phản hồi.
+633: Giao diện người dùng còn đơn giản:
+634: Mặc dù đã đảm bảo tính dễ sử dụng, tuy nhiên giao diện vẫn chưa thực sự sinh động và hấp dẫn đối với trẻ em. Các yếu tố như hình ảnh, màu sắc, hiệu ứng chưa được đầu tư nhiều.
+635: Kỹ năng làm việc nhóm cần cải thiện:
+636: Trong quá trình làm việc, đôi khi việc trao đổi thông tin và phối hợp với các thành viên chưa thực sự hiệu quả, dẫn đến ảnh hưởng đến tiến độ công việc.
+637: Khả năng quản lý thời gian chưa tốt:
+638: Việc phân bổ thời gian giữa học tập, thực tập và hoàn thành báo cáo đôi khi chưa hợp lý, ảnh hưởng đến hiệu quả công việc
+639: Khả năng tự nghiên cứu tài liệu chuyên sâu còn hạn chế: Một số tài liệu chuyên ngành bằng tiếng Anh hoặc có độ phức tạp cao gây khó khăn trong việc tiếp cận và áp dụng vào thực tế.
+640: Đề xuất hướng phát triển
+641: Dựa trên những kết quả đạt được và các vấn đề còn tồn tại trong quá trình thực tập tại Digi Dinos, em đề xuất một số hướng phát triển nhằm hoàn thiện và nâng cao chất lượng của hệ thống trong tương lai như sau:
+642: • Hoàn thiện và mở rộng chức năng hệ thống:
+643: Tiếp tục phát triển đầy đủ các chức năng còn thiếu như:
+644: Hoàn thiện và mở rộng chức năng hệ thống:
+645: Xây dựng hệ thống bài học theo nhiều cấp độ từ cơ bản đến nâng cao.
+646: Bổ sung tính năng đánh giá năng lực người học.
+647: Theo dõi tiến độ học tập và đề xuất lộ trình học phù hợp.
+648: • Ứng dụng AI nâng cao:
+649: Nâng cấp các tính năng trí tuệ nhân tạo để tăng hiệu quả học tập, bao gồm:
+650: Cải thiện độ chính xác của hệ thống nhận diện giọng nói (ASR).
+651: Phân tích lỗi phát âm và đưa ra gợi ý sửa lỗi chi tiết hơn.
+652: Cá nhân hóa nội dung học dựa trên hành vi và trình độ của người dùng.
+653: • Cải thiện giao diện và trải nghiệm người dùng (UI/UX): Thiết kế lại giao diện sinh động hơn, phù hợp với trẻ em:
+654: Sử dụng hình ảnh, màu sắc và nhân vật hoạt hình
+655: Thêm hiệu ứng tương tác để tăng hứng thú học tập
+656: Đơn giản hóa thao tác sử dụng
+657: •Tối ưu hiệu năng và khả năng mở rộng:
+658: Nâng cao tốc độ xử lý và khả năng đáp ứng của hệ thống:
+659: Tối ưu code và cơ sở dữ liệu
+660: Áp dụng các công nghệ cloud và container hóa để tăng khả năng mở rộng hệ thống.
+661: Nâng cao tốc độ xử lý của AI Service.
+662: •Phát triển đa nền tảng:
+663: Mở rộng hệ thống trên nhiều nền tảng khác nhau:
+664: Tiếp tục phát triển phiên bản website hoàn chỉnh.
+665: Mở rộng sang nền tảng mobile như Android và iOS.
+666: Tích hợp với các thiết bị học tập thông minh trong tương lai.
+667: • Tăng cường nội dung học tập:
+668: Xây dựng kho dữ liệu phong phú:
+669: Bổ sung từ vựng, bài học, trò chơi học tập
+670: Tích hợp âm thanh, hình ảnh và video minh họa
+671: Xây dựng nội dung phù hợp với từng độ tuổi
+672: • Tích hợp các công nghệ hỗ trợ học tập:
+673: Áp dụng thêm các công nghệ hiện đại:
+674: Xây dựng chatbot AI hỗ trợ học sinh trong quá trình học.
+675: Phát triển hệ thống gợi ý bài học thông minh.
+676: Áp dụng Gamification nhằm tăng động lực học tập cho trẻ em.
+677: • Nâng cao bảo mật và quản lý dữ liệu:
+678: Đảm bảo an toàn thông tin người dùng:
+679: Bảo vệ thông tin cá nhân của người dùng.
+680: Xây dựng hệ thống xác thực và đăng nhập an toàn hơn.
+681: Tối ưu việc lưu trữ và quản lý dữ liệu học tập
+682: • Phát triển kỹ năng cá nhân:
+683: Bản thân em định hướng:
+684: Tiếp tục nâng cao kiến thức về lập trình và AI
+685: Tham gia các dự án thực tế để tích lũy kinh nghiệm
+686: Cải thiện kỹ năng làm việc nhóm và giao tiếp
+687: ĐÁNH GIÁ KẾT QUẢ ĐẠT ĐƯỢC
+688: 3.1 Mở đầu chương
+689: Chương 2 đã trình bày các nội dung liên quan đến quá trình thực tập tại Digi Dinos, bao gồm nhiệm vụ được giao, công việc thực hiện, phương thức làm việc, kết quả đạt được cũng như những vấn đề còn tồn tại và đề xuất hướng phát triển.
+690: Trong chương 3, báo cáo sẽ tập trung đánh giá kết quả đạt được trong quá trình thực tập, từ đó đưa ra nhận xét về ưu điểm, hạn chế và định hướng phát triển trong thời gian tới.
+691: Đánh giá mức độ hoàn thành mục tiêu thực tập
+692: So với các mục tiêu đã đề ra ban đầu, em đã hoàn thành phần lớn các nội dung trong kế hoạch thực tập tại Digi Dinos. Trong quá trình thực tập, em đã có cơ hội tiếp cận môi trường làm việc thực tế, hiểu được quy trình phát triển phần mềm và cách phối hợp giữa các thành viên trong nhóm để xây dựng sản phẩm.
+693: Về mục tiêu chuyên môn, em đã vận dụng được các kiến thức đã học vào quá trình phát triển hệ thống Speak Joy, đặc biệt là các công nghệ frontend, backend và AI Service. Em đã tìm hiểu và bước đầu áp dụng các công nghệ liên quan đến trí tuệ nhân tạo như nhận diện giọng nói tự động (ASR), tổng hợp giọng nói (TTS) và mô hình ngôn ngữ lớn (LLM) trong hệ thống luyện phát âm tiếng Anh cho trẻ em.
+694: Ngoài ra, em đã tham gia xây dựng và hoàn thiện một số chức năng chính của hệ thống như:
+695: Thiết kế và phát triển giao diện bằng Next.js và React.
+696: Xây dựng API bằng FastAPI.
+697: Tích hợp chức năng ghi âm và xử lý giọng nói.
+698: Kết nối frontend với AI Service.
+699: Kiểm thử và xử lý lỗi trong quá trình phát triển hệ thống.
+700: Hoàn thiện tài liệu và báo cáo thực tập.
+701: Bên cạnh những kết quả đạt được, vẫn còn một số mục tiêu chưa hoàn thành hoàn toàn như:
+702: Cá nhân hóa nội dung học tập theo từng người dùng.
+703: Tối ưu độ chính xác của hệ thống ASR và chấm điểm phát âm.
+704: Mở rộng thêm nội dung học tập và các bài tập tương tác.
+705: Nguyên nhân chủ yếu đến từ hạn chế về thời gian thực tập, kinh nghiệm thực tế và độ phức tạp của các công nghệ AI được sử dụng trong hệ thống. Tuy nhiên, quá trình thực tập đã giúp em tích lũy được nhiều kiến thức và kinh nghiệm quan trọng, đồng thời tạo nền tảng để tiếp tục nghiên cứu và phát triển trong tương lai.
+706: Đánh giá kết quả triển khai hệ thống
+707: Sau quá trình phát triển và kiểm thử, hệ thống Speak Joy đã triển khai thành công các chức năng cốt lõi phục vụ cho việc học tiếng Anh và luyện phát âm cho trẻ em. Hệ thống được xây dựng theo mô hình tách biệt giữa frontend, backend và AI Service, giúp đảm bảo khả năng mở rộng và thuận tiện trong quá trình phát triển.
+708: Về frontend, hệ thống đã xây dựng được giao diện học tập trực quan, hỗ trợ lựa chọn chủ đề học tập, luyện nói bằng giọng nói và theo dõi kết quả học tập. Các màn hình chính như /topics, /kid-bot, /session/history và /api-config đã hoạt động ổn định trong môi trường thử nghiệm.
+709: Về backend, hệ thống đã triển khai các API phục vụ cho xác thực người dùng, quản lý học sinh, quản lý chủ đề học tập và lưu trữ lịch sử luyện tập. Backend có khả năng giao tiếp ổn định với frontend và AI Service thông qua REST API.
+710: Đối với AI Service, hệ thống đã bước đầu triển khai thành công pipeline xử lý luyện phát âm gồm:
+711: Nhận diện giọng nói tự động (ASR).
+712: Chấm điểm phát âm.
+713: Phân tích phản hồi bằng mô hình ngôn ngữ lớn (LLM).
+714: Tổng hợp giọng nói phản hồi bằng TTS.
+715: Việc tích hợp AI giúp hệ thống có khả năng phản hồi trực tiếp cho học sinh sau mỗi lần luyện nói, từ đó tăng tính tương tác và hỗ trợ cải thiện khả năng phát âm tiếng Anh.
+716: Ngoài ra, hệ thống đã lưu trữ được lịch sử học tập, điểm số luyện nói và thông tin học sinh thông qua PostgreSQL trên nền tảng Supabase. Điều này hỗ trợ việc theo dõi tiến độ học tập và quản lý dữ liệu hiệu quả hơn.
+717: Trong quá trình triển khai, nhóm cũng đã thực hiện kiểm thử chức năng, xử lý lỗi giao diện, tối ưu kết nối API và cải thiện trải nghiệm người dùng nhằm đảm bảo hệ thống hoạt động ổn định hơn trong môi trường thực tế.
+718: Mặc dù hệ thống vẫn còn một số hạn chế về hiệu năng xử lý AI và nội dung học tập, nhưng kết quả đạt được cho thấy hệ thống đã đáp ứng được các mục tiêu cơ bản của đề tài và có tiềm năng tiếp tục phát triển trong tương lai.
+719: Đánh giá chất lượng hệ thống đã xây dựng
+720: Hệ thống Speak Joy đã xây dựng được các chức năng cốt lõi phục vụ cho việc học tiếng Anh và luyện phát âm cho trẻ em. Hệ thống được tổ chức theo kiến trúc gồm frontend, backend và AI Service, giúp quá trình phát triển và mở rộng trở nên thuận tiện hơn.
+721: Về chức năng quản lý, hệ thống cung cấp khu vực dành cho phụ huynh thông qua màn hình /api-config, cho phép cấu hình kết nối AI, quản lý hồ sơ học sinh và theo dõi quá trình học tập. Điều này giúp phụ huynh dễ dàng quản lý thông tin và hỗ trợ trẻ trong quá trình sử dụng hệ thống.
+722: Đối với khu vực học tập của trẻ em, hệ thống cung cấp các màn hình như /topics và /kid-bot nhằm hỗ trợ lựa chọn chủ đề học tập, luyện đọc từ vựng và luyện nói theo từng câu hoặc đoạn hội thoại ngắn. Giao diện được thiết kế trực quan, sử dụng màu sắc tươi sáng và hình ảnh sinh động nhằm tạo cảm giác thân thiện và phù hợp với đối tượng người dùng là trẻ em.
+723: AI Service là thành phần quan trọng nhất của hệ thống, đảm nhiệm xử lý toàn bộ pipeline gồm:
+724: Nhận diện giọng nói tự động (ASR).
+725: Chấm điểm phát âm.
+726: Phân tích và tạo phản hồi bằng mô hình ngôn ngữ lớn (LLM).
+727: Tổng hợp phản hồi bằng giọng nói thông qua TTS.
+728: Việc tích hợp pipeline AI giúp hệ thống tạo ra trải nghiệm luyện nói tương tác và hỗ trợ người học cải thiện khả năng phát âm hiệu quả hơn so với các hệ thống học tiếng Anh truyền thống.
+729: Ngoài ra, hệ thống còn cung cấp màn hình /session/history để theo dõi lịch sử học tập, điểm số trung bình và streak luyện tập của học sinh. Điều này giúp người dùng và phụ huynh dễ dàng đánh giá tiến độ học tập theo thời gian.
+730: Bên cạnh những kết quả đạt được, hệ thống vẫn còn một số hạn chế như:
+731: Hiệu năng xử lý ASR chưa thực sự tối ưu khi xử lý audio dài hoặc nhiều request đồng thời.
+732: Độ chính xác của chức năng chấm điểm phát âm vẫn còn phụ thuộc vào chất lượng audio đầu vào.
+733: Chưa hỗ trợ cá nhân hóa lộ trình học tập theo từng học sinh.
+734: Nội dung bài học và trò chơi tương tác còn hạn chế.
+735: Tuy nhiên, với kiến trúc hiện tại, hệ thống có khả năng tiếp tục mở rộng và nâng cấp trong tương lai nhằm cải thiện hiệu năng và bổ sung thêm các tính năng AI nâng cao.
+736: So sánh với các hệ thống học tiếng Anh tương tự
+737: So với các ứng dụng học tiếng Anh phổ biến hiện nay như Duolingo hoặc British Council Kids, hệ thống Speak Joy hiện vẫn còn ở mức cơ bản về số lượng bài học, kho nội dung và các tính năng hỗ trợ học tập nâng cao. Các nền tảng thương mại lớn thường có hệ sinh thái hoàn chỉnh, nội dung đa dạng và được phát triển trong thời gian dài với quy mô người dùng lớn.
+738: Tuy nhiên, hệ thống Speak Joy có một số điểm mạnh riêng phù hợp với định hướng phát triển dành cho trẻ em Việt Nam. Giao diện hệ thống được xây dựng bằng tiếng Việt, sử dụng hình ảnh trực quan và luồng thao tác đơn giản nhằm phù hợp với học sinh tiểu học. Điều này giúp trẻ dễ dàng tiếp cận và sử dụng hệ thống hơn trong quá trình học tập.
+739: Ngoài ra, hệ thống tập trung vào chức năng luyện phát âm tiếng Anh thông qua AI Service với pipeline ASR → Pronunciation Scoring → LLM Feedback → TTS. Việc tích hợp công nghệ nhận diện giọng nói và phản hồi phát âm giúp tạo ra trải nghiệm học tập mang tính tương tác cao, hỗ trợ người học cải thiện kỹ năng nói và phát âm tiếng Anh.
+740: Bên cạnh đó, Speak Joy có định hướng cá nhân hóa việc học cho trẻ em Việt Nam thông qua việc theo dõi lịch sử học tập, đánh giá tiến độ và xây dựng lộ trình phù hợp với từng học sinh. Đây là hướng phát triển tiềm năng mà nhiều ứng dụng học tiếng Anh phổ thông hiện nay chưa tối ưu hoàn toàn cho đối tượng học sinh tiểu học tại Việt Nam.
+741: Mặc dù hệ thống vẫn còn cần tiếp tục hoàn thiện về nội dung học tập, hiệu năng và khả năng mở rộng, nhưng dự án đã bước đầu xây dựng được nền tảng phù hợp để phát triển thành một hệ thống hỗ trợ học tiếng Anh ứng dụng AI dành cho trẻ em trong tương lai.
+742: Bài học kinh nghiệm rút ra
+743: Qua quá trình thực tập và tham gia phát triển hệ thống Speak Joy, em đã tích lũy được nhiều bài học kinh nghiệm thực tiễn quan trọng trong lĩnh vực phát triển phần mềm và ứng dụng trí tuệ nhân tạo.
+744: Phân tích yêu cầu đóng vai trò quan trọng: Việc phân tích yêu cầu kỹ lưỡng ngay từ đầu giúp xác định rõ mục tiêu hệ thống, hạn chế thay đổi chức năng trong quá trình phát triển và giảm thời gian xử lý lỗi phát sinh. Đây là bước quan trọng ảnh hưởng trực tiếp đến tiến độ và chất lượng sản phẩm.
+745: Hiểu rõ đặc thù khi tích hợp AI vào sản phẩm: Quá trình tích hợp AI không chỉ yêu cầu kiến thức lập trình mà còn cần hiểu về dữ liệu đầu vào, giới hạn của mô hình và cách hoạt động của từng API AI. Đặc biệt, các chức năng như ASR, chấm điểm phát âm và phản hồi bằng LLM cần được tối ưu phù hợp với đối tượng người dùng là trẻ em.
+746: Kiểm thử với người dùng thực tế là cần thiết: Việc kiểm thử hệ thống với trẻ em cho kết quả khác biệt đáng kể so với kiểm thử nội bộ. Thông qua quá trình này, nhóm phát triển có thể phát hiện các vấn đề liên quan đến giao diện, thao tác sử dụng và khả năng tương tác của hệ thống để điều chỉnh phù hợp hơn với người dùng thực tế.
+747: Làm việc nhóm giúp nâng cao hiệu quả phát triển: Trong quá trình thực hiện dự án, em nhận thấy việc trao đổi thường xuyên giữa các thành viên giúp giải quyết vấn đề nhanh hơn và đảm bảo tiến độ công việc. Kỹ năng giao tiếp và phối hợp nhóm là yếu tố quan trọng trong môi trường phát triển phần mềm thực tế.
+748: Tự học và nghiên cứu công nghệ là kỹ năng cần thiết: Công nghệ thay đổi rất nhanh, đặc biệt trong lĩnh vực AI. Vì vậy, khả năng tự học, tìm hiểu tài liệu và chủ động nghiên cứu là yếu tố quan trọng giúp nâng cao kiến thức và thích nghi với các yêu cầu công việc mới.
+749: Kiểm thử và tối ưu hệ thống cần được thực hiện liên tục: Trong quá trình phát triển, việc kiểm thử thường xuyên giúp phát hiện lỗi sớm và nâng cao độ ổn định của hệ thống. Đồng thời, tối ưu hiệu năng là yếu tố cần thiết đối với các chức năng xử lý AI và audio thời gian thực.
+750: Một số chú ý
+751: Độ dài nội dung tối thiểu của một chương là 10 trang; Độ dài tối thiểu của quyển BÁO CÁO THỰC TẬP là 30 trang (Không bao gồm trang bìa, Mục lục, Danh mục hình vẽ, bảng biểu, từ viết tắt)
+752: Tất cả các hình vẽ/biểu đồ/nội dung KHÔNG PHẢI do tác giả đồ án tự tạo ra BẮT BUỘC phải trích dẫn nguồn.
+753: Báo cáo BÁO CÁO THỰC TẬP sẽ in 02 mặt, chỉ in màu những trang cần thiết.
+754: Các hình quá nhiều chi tiết cần bổ sung bản mềm (có URL download) để thành viên hội đồng tiện theo dõi.
+755: Quy trình làm TTDN
+756: Thời gian làm TTDN là 10 tuần, tổng thời gian tối đa từ khi được cấp quyết định cho phép làm TTDN cho đến khi nhập điểm là 12 tuần.
+757: Trong vòng 03 tuần kể từ khi được cấp quyết định, công lệnh và giấy giới thiệu đi TTDN, sinh viên, doanh nghiệp và GVHD phải thống nhất nội dung đề cương TTDN. Đề cương TTDN sẽ được sử dụng để đính kèm vào trước MỤC LỤC trong báo cáo TTDN.
+758: Chú ý: Quyển báo cáo sử dụng để bảo vệ sẽ đính kèm bản bản gốc (Có chữ ký tươi của GVHD, Người hướng dẫn tại doanh nghiệp và Sinh viên).
+759: Trước thứ 6 của tuần thứ 10 của thời gian làm TTDN, Sinh viên cần in 02 quyển báo cáo TTDN, xin ý kiến xác nhận và nhận xét của doanh nghiệp, đóng dấu (sử dụng mẫu của bộ môn). Sinh viên không có chữ ký xác nhận của GVHD và/hoặc Doanh nghiệp sẽ không được công nhận kết quả TTDN và bị chấm 0đ vào điểm môn học, phải thực tập lại từ đầu.
+760: Báo cáo TTDN sẽ được sử dụng phần mềm Turnitin để kiểm tra đạo văn, sinh viên bị tính là đạo văn (không được phép bảo vệ TTDN và nhận điểm F) nếu tỷ lệ trùng lặp lớn hơn 30%.
+761: Trang phục bảo vệ:
+762: Nam: mặc áo trắng, quần âu sẫm màu, đi giày hoặc dép có quai hậu
+763: Nữ: áo dài, đi giày hoặc dép có quai hậu
+764: Slide trình bày theo yêu cầu trong mẫu trình bày slide TTDN của bộ môn
+765: Thời gian bảo vệ TTDN:
+766: Tối đa 10 phút trình bày, 20 phút trả lời câu hỏi của hội đồng.
+767: Điểm TTDN bao gồm:
+768: + Điểm đánh giá của doanh nghiệp;
+769: + Điểm chấm của các thành viên trong hội đồng có mặt;
+770: + Điểm chấm quyển báo cáo.
+771: Điểm tối thiểu để bảo vệ thành công TTDN là 5 điểm và không có thành viên nào trong hội đồng đánh giá <5 điểm.
+772: Sau khi bảo vệ, sinh viên nộp lại TẤT CẢ dữ liệu bản mềm sau khi sửa của báo cáo, sản phẩm TTDN vào form nộp sản phẩm TTDN, cũng như kê khai đầy đủ thông tin doanh nghiệp của bộ môn.
+773: Kết chương
+774: Chương 3 đã đánh giá toàn diện kết quả thực tập tại Digi Dinos, bao gồm mức độ hoàn thành mục tiêu, chất lượng hệ thống được xây dựng, so sánh với các sản phẩm tương tự và những bài học kinh nghiệm thực tế. Những đánh giá này là cơ sở để đưa ra định hướng phát triển trong phần Kết luận phía sau.
+775: KẾT LUẬN
+776: Qua thời gian thực tập tại Công ty Digi Dinos từ ngày 02/03/2026 đến 15/05/2026, em xin gửi lời cảm ơn chân thành đến Ban Giám đốc, người hướng dẫn tại doanh nghiệp và toàn thể các anh chị trong đội ngũ kỹ thuật của Digi Dinos đã tận tình hỗ trợ, tạo điều kiện để em tiếp cận và làm việc trong môi trường phát triển phần mềm chuyên nghiệp.
+777: Qua hơn 2 tháng thực tập, em đã tích lũy được nhiều kiến thức và kinh nghiệm quý báu về quy trình phát triển phần mềm, kỹ năng lập trình thực tế, ứng dụng công nghệ trí tuệ nhân tạo (AI) vào sản phẩm giáo dục, kỹ năng làm việc nhóm và giao tiếp chuyên nghiệp. Đặc biệt, việc tham gia trực tiếp vào việc xây dựng hệ thống hỗ trợ học tiếng Anh cho trẻ em đã giúp em hiểu rõ hơn cách áp dụng lý thuyết học được vào bài toán thực tiễn.
+778: Em tin rằng những kiến thức, kỹ năng và kinh nghiệm tích lũy được trong quá trình thực tập tại Digi Dinos sẽ là hành trang vững chắc, giúp em tự tin bước vào con đường trở thành một kỹ sư phần mềm chuyên về ứng dụng trí tuệ nhân tạo trong tương lai.
+779: TÀI LIỆU THAM KHẢO
+780: [4] Tailwind CSS Documentation. [5] Zustand Documentation. [6] react-media-recorder Documentation. [7] wavesurfer.js Documentation. [8] FastAPI Documentation. [9] Uvicorn Documentation. [10] Pydantic Documentation. [11] PyJWT & bcrypt Documentation. [12] psycopg2 Documentation. [13] httpx Documentation. [14] PostgreSQL & Supabase Documentation.:
+781: [1] Vercel, Next.js Documentation. Truy cập tại: https://nextjs.org/docs
+782: [2] Meta, React Documentation. Truy cập tại: https://react.dev
+783: [3] Microsoft, TypeScript Documentation. Truy cập tại: https://www.typescriptlang.org/docs
+784: [4] Tailwind Labs, Tailwind CSS Documentation. Truy cập tại: https://tailwindcss.com/docs
+785: [5] Zustand Documentation. Truy cập tại: https://zustand.docs.pmnd.rs
+786: [6] react-media-recorder Documentation. Truy cập tại: https://www.npmjs.com/package/react-media-recorder
+787: [7] wavesurfer.js Documentation. Truy cập tại: https://wavesurfer.xyz
+788: [8] FastAPI Documentation. Truy cập tại: https://fastapi.tiangolo.com
+789: [9] Uvicorn Documentation. Truy cập tại: https://www.uvicorn.org
+790: [10] Pydantic Documentation. Truy cập tại: https://docs.pydantic.dev
+791: [11] PyJWT Documentation và bcrypt Documentation.
+792: https://pyjwt.readthedocs.io
+793: https://pypi.org/project/bcrypt
+794: [12] psycopg2 Documentation. Truy cập tại: https://www.psycopg.org/docs
+795: [13] HTTPX Documentation. Truy cập tại: https://www.python-httpx.org
+796: [14] PostgreSQL Documentation và Supabase Documentation.
+797: https://www.postgresql.org/docs
+798: https://supabase.com/docs
+799: [1] Roger S. Pressman, Software Engineering: A Practitioner’s Approach, McGraw-Hill Education, 8th Edition, 2014.
+800: [2] Ian Sommerville, Software Engineering, Pearson Education, 10th Edition, 2015.
+801: [3] OpenAI, OpenAI API Documentation. Truy cập tại: OpenAI Platform Documentation
+802: [4] Meta, React Official Documentation. Truy cập tại: React Documentation
+803: [5] OpenJS Foundation, Node.js Documentation. Truy cập tại: Node.js Documentation
+804: [6] Oracle Corporation, MySQL Documentation. Truy cập tại: MySQL Documentation
+805: [7] Mozilla Foundation, MDN Web Docs. Truy cập tại: MDN Web Docs
+806: [8] Jiaqi Liu, “Applications of Natural Language Processing in Education”, Journal of Educational Technology Development and Exchange, 2021.
+807: [9] Adamopoulou, E., & Moussiades, L., “An Overview of Chatbot Technology”, IFIP International Conference on Artificial Intelligence Applications and Innovations, 2020.
+808: [10] Duolingo, Language Learning Platform Research and Features. Truy cập tại: Duolingo Official Website
+809: [15] UNESCO. Artificial Intelligence in Education.
+810: Available: https://www.unesco.org/en/digital-education/artificial-intelligence
+811: [16] Gartner. Top Strategic Technology Trends.
+812: Available: https://www.gartner.com/en/information-technology
+813: [17] McKinsey & Company. The State of AI.
+814: Available: https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai
+815: [18] IBM. What is Digital Transformation?
+816: Available: https://www.ibm.com/topics/digital-transformation
+817: [1] Next.js Documentation. Available: https://nextjs.org/docs
+818: [2] React Documentation. Available: https://react.dev/
+819: [3] TypeScript Documentation. Available: https://www.typescriptlang.org/docs/
+820: [4] Tailwind CSS Documentation. Available: https://tailwindcss.com/docs
+821: [5] Zustand Documentation. Available: https://zustand.docs.pmnd.rs/
+822: [6] react-media-recorder Documentation.
+823: Available: https://www.npmjs.com/package/react-media-recorder
+824: [7] wavesurfer.js Documentation.
+825: Available: https://wavesurfer.xyz/
+826: [8] FastAPI Documentation.
+827: Available: https://fastapi.tiangolo.com/
+828: [9] Uvicorn Documentation.
+829: Available: https://www.uvicorn.org/
+830: [10] Pydantic Documentation.
+831: Available: https://docs.pydantic.dev/
+832: [11] PyJWT Documentation.
+833: Available: https://pyjwt.readthedocs.io/
+834: [12] psycopg2 Documentation.
+835: Available: https://www.psycopg.org/docs/
+836: [13] HTTPX Documentation.
+837: Available: https://www.python-httpx.org/
+838: [14] Supabase Documentation.
+839: Available: https://supabase.com/docs
+840: [15] UNESCO. Artificial Intelligence in Education.
+841: Available: https://www.unesco.org/en/digital-education/artificial-intelligence
+842: [16] Gartner. Top Strategic Technology Trends.
+843: Available: https://www.gartner.com/en/information-technology
+844: [17] McKinsey & Company. The State of AI.
+845: Available: https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai
+846: [18] IBM. What is Digital Transformation?
+847: Available: https://www.ibm.com/topics/digital-transformation
+848: [19] OpenAI API Documentation – Audio and Speech.
+849: Available: https://platform.openai.com/docs/guides/audio
+850: [20] Google AI Gemini Documentation.
+851: Available: https://ai.google.dev/
+852: [21] Docker Documentation.
+853: Available: https://docs.docker.com/
+854: [22] PostgreSQL Documentation.
+855: Available: https://www.postgresql.org/docs/
+856: [23] WebSocket Protocol Documentation.
+857: Available: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API
+858: PHỤ LỤC

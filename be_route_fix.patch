@@ -1,0 +1,29 @@
+diff --git a/app/api/routes/children.py b/app/api/routes/children.py
+--- a/app/api/routes/children.py
++++ b/app/api/routes/children.py
+@@
+-@router.get("/")
++@router.get("")
+ def list_children_route(user=Depends(require_auth)):
+@@
+-@router.post("/")
++@router.post("")
+ def create_child_route(payload: ChildProfileRequest, user=Depends(require_auth)):
+diff --git a/app/api/routes/sessions.py b/app/api/routes/sessions.py
+--- a/app/api/routes/sessions.py
++++ b/app/api/routes/sessions.py
+@@
+-@router.get("/")
++@router.get("")
+ def list_sessions_route(user=Depends(require_auth)):
+@@
+-@router.post("/")
++@router.post("")
+ def create_session_route(payload: CreateSessionRequest, user=Depends(require_auth)):
+diff --git a/app/api/routes/topics.py b/app/api/routes/topics.py
+--- a/app/api/routes/topics.py
++++ b/app/api/routes/topics.py
+@@
+-@router.get("/")
++@router.get("")
+ def list_topics_route(childId: str | None = Query(default=None), user=Depends(optional_auth)):

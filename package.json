@@ -1,0 +1,17 @@
+{
+  "name": "speak-joy",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/dev.ps1",
+    "build": "npm --prefix fe run build",
+    "build:frontend": "npm --prefix fe run build",
+    "dev:ai": ".\\.venv\\Scripts\\python.exe -m uvicorn be.ai_service.app_hardware:app --reload --port 8001",
+    "dev:ai:hardware": ".\\.venv\\Scripts\\python.exe -m uvicorn be.ai_service.app_hardware:app --reload --port 8001",
+    "dev:ai:api": ".\\.venv\\Scripts\\python.exe -m uvicorn be.ai_service.app_full_api:app --reload --port 8001",
+    "dev:backend": "npm --prefix be run dev:backend",
+    "dev:frontend": "npm --prefix fe run dev",
+    "seed:topics": "npm --prefix be run seed:topics",
+    "typecheck": "npm --prefix be run typecheck && npm --prefix fe run typecheck"
+  }
+}

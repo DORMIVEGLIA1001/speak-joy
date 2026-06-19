@@ -1,0 +1,17 @@
+sequenceDiagram
+  autonumber
+  participant U as User (Browser)
+  participant FE as Frontend (Next.js)
+  participant BE as Backend (FastAPI)
+  participant KMS as KMS / Secret Manager
+  participant DB as Database
+
+  U->>FE: Enter API key over HTTPS
+  FE->>BE: POST key + access token
+  BE->>BE: Verify token + ownership
+  BE->>KMS: Encrypt key / create secret ref
+  KMS-->>BE: Ciphertext / secretRef
+  BE->>DB: Store ciphertext + metadata
+  DB-->>BE: OK
+  BE-->>FE: Return apiKeyMasked only
+  FE-->>U: Show "saved" status

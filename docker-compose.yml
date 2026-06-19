@@ -1,0 +1,88 @@
+services:
+  be:
+    image: speakjoy-be:local
+    build:
+      context: ./be
+      dockerfile: Dockerfile.fastapi
+    container_name: speak-joy-be
+    restart: unless-stopped
+    env_file:
+      - ./be/.env.docker.supabase
+    environment:
+      NODE_ENV: development
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5)"
+        ]
+      interval: 20s
+      timeout: 8s
+      retries: 5
+      start_period: 25s
+
+  fe:
+    image: speakjoy-fe:local
+    build:
+      context: ./fe
+      dockerfile: Dockerfile
+    container_name: speak-joy-fe
+    restart: unless-stopped
+    env_file:
+      - ./fe/.env.docker
+    depends_on:
+      be:
+        condition: service_healthy
+    expose:
+      - "3000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000').then((response)=>{if(!response.ok)process.exit(1)}).catch(()=>process.exit(1))"
+        ]
+      interval: 20s
+      timeout: 8s
+      retries: 5
+      start_period: 30s
+
+  web:
+    image: nginx:1.27-alpine
+    container_name: speak-joy-web
+    restart: unless-stopped
+    depends_on:
+      be:
+        condition: service_healthy
+      fe:
+        condition: service_healthy
+    ports:
+      - "3000:80"
+    volumes:
+      - ./deploy/nginx/trycloudflare.conf:/etc/nginx/conf.d/default.conf:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "wget -q -O /dev/null http://127.0.0.1/ || exit 1"
+        ]
+      interval: 20s
+      timeout: 8s
+      retries: 5
+      start_period: 15s
+
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: speak-joy-tunnel
+    restart: unless-stopped
+    profiles:
+      - tunnel
+    depends_on:
+      web:
+        condition: service_healthy
+    command: tunnel --no-autoupdate --url http://web:80

@@ -1,0 +1,17 @@
+# Secrets
+be/.env
+fe/.env.local
+
+# Python environments
+.venv/
+.conda/
+__pycache__/
+*.pyc
+
+# Frontend build output
+fe/.next/
+fe/.next-ci/
+fe/out/
+
+# Logs
+*.log
