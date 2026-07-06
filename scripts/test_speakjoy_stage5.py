@@ -7,7 +7,7 @@ import wave
 from pathlib import Path
 
 from be.ai_service.speakjoy import (
-    QUOTA_FALLBACK_MESSAGE,
+    LlmQuotaExceeded,
     SpeakJoyAsrPartial,
     SpeakJoyConfig,
     SpeakJoyRealtimeSession,
@@ -31,7 +31,8 @@ async def _friendly_llm_stream(**_: object):
 
 async def _quota_llm_stream(**_: object):
     await asyncio.sleep(0)
-    yield QUOTA_FALLBACK_MESSAGE
+    raise LlmQuotaExceeded("quota exhausted")
+    yield ""
 
 
 async def _drain_session_events(session: SpeakJoyRealtimeSession, wait_ms: int = 50) -> list[tuple[str, dict]]:
@@ -61,9 +62,24 @@ async def test_quiet_sentence() -> None:
     events = await _drain_session_events(session)
     asr_final_count = sum(1 for event_type, _ in events if event_type == "asr_final")
     llm_started_count = sum(1 for event_type, _ in events if event_type == "llm_started")
+    timing_stages = {
+        payload.get("stage")
+        for event_type, payload in events
+        if event_type == "ack" and payload.get("kind") == "timing_mark"
+    }
     assert asr_final_count == 1, f"expected 1 asr_final, got {asr_final_count}"
     assert llm_started_count == 1, f"expected 1 llm_started, got {llm_started_count}"
-    print("PASS quiet sentence: 1 asr_final, 1 llm_started")
+    for stage in {
+        "asr_first_partial",
+        "asr_final",
+        "llm_started",
+        "llm_first_token",
+        "llm_final",
+        "tts_first_text_ready",
+        "tts_first_chunk_ready",
+    }:
+        assert stage in timing_stages, f"expected timing mark {stage}, got {sorted(timing_stages)}"
+    print("PASS quiet sentence: 1 asr_final, 1 llm_started, timing marks present")
 
 
 def _write_wav(path: Path, samples: list[int], sample_rate: int = 16000) -> None:
@@ -80,15 +96,15 @@ def test_background_noise_gate() -> None:
     silence_path = workspace_temp / "silence.wav"
     samples = [0] * 16000
     _write_wav(silence_path, samples)
-    duration, rms = _analyze_wav_signal(str(silence_path))
-    assert duration >= 1.0, f"expected >=1s duration, got {duration}"
-    assert rms < MIN_TRIMMED_RMS, f"expected silence RMS < threshold, got {rms}"
+    silence_stats = _analyze_wav_signal(str(silence_path))
+    assert silence_stats.duration_seconds >= 1.0, f"expected >=1s duration, got {silence_stats.duration_seconds}"
+    assert silence_stats.rms < MIN_TRIMMED_RMS, f"expected silence RMS < threshold, got {silence_stats.rms}"
 
     low_noise_path = workspace_temp / "low_noise.wav"
     noise_samples = [int(120 * math.sin(index / 8.0)) for index in range(16000)]
     _write_wav(low_noise_path, noise_samples)
-    _duration2, rms2 = _analyze_wav_signal(str(low_noise_path))
-    assert rms2 < MIN_TRIMMED_RMS, f"expected low-noise RMS < threshold, got {rms2}"
+    low_noise_stats = _analyze_wav_signal(str(low_noise_path))
+    assert low_noise_stats.rms < MIN_TRIMMED_RMS, f"expected low-noise RMS < threshold, got {low_noise_stats.rms}"
 
     print("PASS background noise gate: silence/low-noise would be dropped")
 
@@ -118,10 +134,19 @@ async def test_quota_cooldown() -> None:
         )
     )
     second_events = await _drain_session_events(session)
-
-    total_llm_started = sum(1 for event_type, _ in first_events + second_events if event_type == "llm_started")
-    assert total_llm_started == 1, f"expected 1 llm_started during cooldown test, got {total_llm_started}"
-    print("PASS quota cooldown: fallback once, no repeated llm_started during cooldown")
+    llm_started_modes = [
+        payload.get("mode")
+        for event_type, payload in first_events + second_events
+        if event_type == "llm_started"
+    ]
+    assert llm_started_modes == ["remote", "fallback"], f"expected remote then fallback, got {llm_started_modes}"
+    cooldown_events = [
+        payload
+        for event_type, payload in first_events
+        if event_type == "ack" and payload.get("kind") == "llm_cooldown_started"
+    ]
+    assert cooldown_events, "expected llm_cooldown_started ack after quota failure"
+    print("PASS quota cooldown: remote miss enters cooldown, next turn uses fallback mode")
 
 
 def test_frontend_turn_taking_guards() -> None:
@@ -129,11 +154,14 @@ def test_frontend_turn_taking_guards() -> None:
     hook_text = Path(r"E:\test\speak joy\fe\hooks\useSpeakJoyCall.ts").read_text(encoding="utf-8")
 
     assert "private isTtsActive = false;" in realtime_text
-    assert "this.isTtsActive ||" in realtime_text
+    assert "private timingMarksByGeneration = new Map<number, Record<string, number>>();" in realtime_text
+    assert "this.handleTimingMark(event.payload);" in realtime_text
+    assert "console.info('[SpeakJoy Timing] Summary:" in realtime_text
+    assert "if (this.isTtsActive) {" in realtime_text
     assert "this.isTtsActive = true;" in realtime_text
     assert "this.isTtsActive = false;" in realtime_text
-    assert "const TTS_POST_PLAYBACK_COOLDOWN_MS = 900;" in hook_text
-    print("PASS frontend turn-taking guards: TTS active lock and 1000ms cooldown are present")
+    assert "const TTS_POST_PLAYBACK_COOLDOWN_MS = 700;" in hook_text
+    print("PASS frontend turn-taking guards: TTS active lock, timing summary, and 700ms cooldown are present")
 
 
 async def main() -> None:

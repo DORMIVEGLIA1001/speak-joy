@@ -10,13 +10,13 @@ Tính năng luyện nói freestyle cho phép trẻ trò chuyện tự do bằng 
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                        FRONTEND (Next.js)                     │
+│                        FRONTEND (Next.js)                    │
 │                                                              │
 │  SpeakJoy/page.tsx ──► useSpeakJoyCall.ts ──► speakjoy-realtime.ts
 │       (UI)                (React Hook)         (WebSocket Client)
 │                                                      │
 │  TipsPanel.tsx    HistoryPanel.tsx    useSessionHistory.ts    │
-│  (Tips bên trái)  (Lịch sử bên phải)  (Fetch sessions)      │
+│  (Tips bên trái)  (Lịch sử bên phải)  (Fetch sessions)        │
 └──────────────────────────────────┬───────────────────────────┘
                                    │ WebSocket (ws://host:8000/api/ai/ws/speakjoy)
 ┌──────────────────────────────────▼───────────────────────────┐
@@ -40,7 +40,7 @@ Tính năng luyện nói freestyle cho phép trẻ trò chuyện tự do bằng 
 1. User bấm nút ☎️ → `handleStartCall()` → `useSpeakJoyCall.startCall()`
 2. Kiểm tra quyền microphone (`getUserMedia`)
 3. Tạo `SpeakJoyRealtimeClient`, kết nối WebSocket
-4. Gửi message `config` với: child_age, child_name, topic_name, vocabulary, speaker, pause_after_ms, tts_words_per_chunk
+4. Gửi message `config` với: child_age, child_name, topic_name, vocabulary,         speaker, pause_after_ms, tts_words_per_chunk
 5. Server tạo `SpeakJoyRealtimeSession`, gửi `session_started`
 6. Server gửi lời chào proactive qua LLM events + TTS audio
 7. Frontend đặt timer 12s fallback để bắt đầu ghi âm nếu greeting không đến
@@ -129,16 +129,16 @@ Tính năng luyện nói freestyle cho phép trẻ trò chuyện tự do bằng 
          │                                          │
          ▼                                          │
     ┌─────────┐    startRecording    ┌───────────┐  │
-    │  idle   │ ──────────────────► │ listening │  │
+    │  idle   │ ──────────────────►  │ listening │  │
     └─────────┘                      └───────────┘  │
          ▲                                │         │
          │                     onAsrFinal │         │
          │                                ▼         │
-         │                         ┌──────────┐    │
-         │    onTtsPlaybackComplete│ thinking │    │
-         │◄────────────────────────└──────────┘    │
+         │                         ┌──────────┐     │
+         │    onTtsPlaybackComplete│ thinking │     │
+         │◄────────────────────────└──────────┘     │
          │                                │         │
-         │                  onTtsChunkReady│         │
+         │                 onTtsChunkReady│         │
          │                                ▼         │
          │                         ┌──────────┐    │
          └─────────────────────────│ speaking │────┘

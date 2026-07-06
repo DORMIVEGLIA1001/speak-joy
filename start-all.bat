@@ -4,16 +4,18 @@ setlocal
 echo Starting local Speak Joy services...
 
 set "ROOT=E:\test\speak joy"
-set "FRONTEND_URL=http://localhost:3005"
+set "FRONTEND_URL=http://localhost:3006"
 
-start "Speak Joy Backend" cmd /k "cd /d %ROOT% && set CORS_ORIGINS=%FRONTEND_URL%,http://127.0.0.1:3005,http://localhost:3000,http://127.0.0.1:3000 && set FRONTEND_BASE_URL=%FRONTEND_URL% && set GOOGLE_REDIRECT_URI=http://localhost:8000/api/auth/google/callback && .\.venv\Scripts\python.exe -m uvicorn be.app.main:app --host 0.0.0.0 --port 8000 --reload --reload-dir be"
+start "Speak Joy Backend" cmd /k "cd /d %ROOT% && set CORS_ORIGINS=%FRONTEND_URL%,http://127.0.0.1:3006 && set FRONTEND_BASE_URL=%FRONTEND_URL% && set GOOGLE_REDIRECT_URI=%FRONTEND_URL%/api/auth/google/callback && set FACEBOOK_REDIRECT_URI=%FRONTEND_URL%/api/auth/facebook/callback && .\.venv\Scripts\python.exe -m uvicorn be.app.main:app --host 0.0.0.0 --port 8081 --reload --reload-dir be"
 
-start "Speak Joy Frontend" cmd /k "cd /d %ROOT%\fe && set PORT=3005 && npm run dev -- --port 3005"
+start "Speak Joy TTS" cmd /k "cd /d %ROOT%\VieNeu-TTS && start-web-stream.bat"
+
+start "Speak Joy Frontend" cmd /k "cd /d %ROOT%\fe && set DISABLE_HMR=false&& set PORT=3006&& set BACKEND_BASE_URL=http://127.0.0.1:8081&& npm run dev"
 
 echo.
 echo Local services started in separate windows:
-echo   - Backend:  http://localhost:8000
-echo   - Frontend: http://localhost:3005
+echo   - Backend:  http://localhost:8081
+echo   - Frontend: http://localhost:3006
 echo.
 echo SpeakJoy AI is mounted under /api/ai on the main backend.
 
