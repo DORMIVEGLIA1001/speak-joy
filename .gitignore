@@ -15,3 +15,6 @@ fe/out/
 
 # Logs
 *.log
+
+# Local documentation and generated reports
+*.md
