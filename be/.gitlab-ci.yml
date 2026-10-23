@@ -1,0 +1,90 @@
+stages:
+  - validate
+  - deploy
+
+variables:
+  DOCKER_TLS_CERTDIR: ""
+  DOCKER_DRIVER: overlay2
+
+  # Remote deploy settings (configure in GitLab CI/CD Variables)
+  DEPLOY_PORT: "22"
+
+validate_python:
+  stage: validate
+  image: python:3.11-slim
+  script:
+    - python --version
+    - python -m compileall app ai_service
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH
+
+# Auto deploy to production server when pushing to main.
+deploy_production:
+  stage: deploy
+  image: alpine:3.20
+  before_script:
+    - apk add --no-cache openssh-client bash rsync
+    - mkdir -p ~/.ssh
+    - echo "$BITNAMI_SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh-keyscan -p "$DEPLOY_PORT" "$IP_DEPLOY" >> ~/.ssh/known_hosts
+  script:
+    # Write env file to server
+    - printf "%s" "$ENV_CONFIG" | ssh -p "$DEPLOY_PORT" "$USER_DEPLOY@$IP_DEPLOY" "mkdir -p '$DEPLOY_FOLDER' && cat > '$DEPLOY_FOLDER/.env'"
+    # Sync the exact CI checkout to the server. This avoids stale source when server-side git auth/fetch fails.
+    - ssh -p "$DEPLOY_PORT" "$USER_DEPLOY@$IP_DEPLOY" "mkdir -p '$DEPLOY_FOLDER/source'"
+    - >
+      rsync -az --delete --delete-excluded
+      --exclude='.git/'
+      --exclude='.env'
+      --exclude='.env.*'
+      --exclude='__pycache__/'
+      --exclude='.pytest_cache/'
+      --exclude='.mypy_cache/'
+      --exclude='.ruff_cache/'
+      -e "ssh -p $DEPLOY_PORT"
+      ./
+      "$USER_DEPLOY@$IP_DEPLOY:$DEPLOY_FOLDER/source/"
+    # Copy compose file to server
+    - scp -P "$DEPLOY_PORT" docker-compose.yml "$USER_DEPLOY@$IP_DEPLOY:$DEPLOY_FOLDER/docker-compose.yml"
+    - |
+      ssh -p "$DEPLOY_PORT" "$USER_DEPLOY@$IP_DEPLOY" "
+        set -e
+        cd '$DEPLOY_FOLDER'
+        # Ensure db service and compose network are up first
+        docker compose up -d db
+        docker network inspect speak-joy >/dev/null 2>&1 || docker network create speak-joy
+        docker build -f source/Dockerfile.fastapi -t speak-joy-be:latest source
+        docker run --rm \
+          --env-file '$DEPLOY_FOLDER/.env' \
+          --network speak-joy \
+          speak-joy-be:latest \
+          python -m be.app.db.migrate
+        # Apply incremental SQL migrations once each (tracked in schema_migrations).
+        docker run --rm \
+          --env-file '$DEPLOY_FOLDER/.env' \
+          --network speak-joy \
+          speak-joy-be:latest \
+          python -m be.app.db.run_migrations
+        docker run --rm \
+          --env-file '$DEPLOY_FOLDER/.env' \
+          --network speak-joy \
+          speak-joy-be:latest \
+          python -m be.app.db.seed_topics
+        # Run with plain docker (no registry needed)
+        docker rm -f speak-joy-be || true
+        docker run -d \
+          --name speak-joy-be \
+          --restart unless-stopped \
+          --env-file '$DEPLOY_FOLDER/.env' \
+          --network speak-joy \
+          -p 127.0.0.1:8080:8000 \
+          speak-joy-be:latest
+        docker image prune -f
+      "
+  environment:
+    name: production
+    url: https://api-speak-joy.chainz.tech
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"

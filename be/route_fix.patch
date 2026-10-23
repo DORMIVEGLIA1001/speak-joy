@@ -1,0 +1,57 @@
+diff --git a/app/api/routes/children.py b/app/api/routes/children.py
+index 7baf3ee..4d2a9fa 100644
+--- a/app/api/routes/children.py
++++ b/app/api/routes/children.py
+@@ -29,7 +29,7 @@ def _handle_error(error: Exception) -> JSONResponse:
+     )
+ 
+ 
+-@router.get("/")
++@router.get("")
+ def list_children_route(user=Depends(require_auth)):
+     try:
+         children = list_children_for_user(user)
+@@ -38,7 +38,7 @@ def list_children_route(user=Depends(require_auth)):
+         return _handle_error(error)
+ 
+ 
+-@router.post("/")
++@router.post("")
+ def create_child_route(payload: ChildProfileRequest, user=Depends(require_auth)):
+     try:
+         child = add_child_for_user(user.id, payload)
+diff --git a/app/api/routes/sessions.py b/app/api/routes/sessions.py
+index 9252d58..e45e4dc 100644
+--- a/app/api/routes/sessions.py
++++ b/app/api/routes/sessions.py
+@@ -26,7 +26,7 @@ def _handle_error(error: Exception) -> JSONResponse:
+     )
+ 
+ 
+-@router.get("/")
++@router.get("")
+ def list_sessions_route(user=Depends(require_auth)):
+     try:
+         sessions = list_sessions(user)
+@@ -35,7 +35,7 @@ def list_sessions_route(user=Depends(require_auth)):
+         return _handle_error(error)
+ 
+ 
+-@router.post("/")
++@router.post("")
+ def create_session_route(payload: CreateSessionRequest, user=Depends(require_auth)):
+     try:
+         session = create_session_for_user(user, payload)
+diff --git a/app/api/routes/topics.py b/app/api/routes/topics.py
+index 4c10c3d..c42f670 100644
+--- a/app/api/routes/topics.py
++++ b/app/api/routes/topics.py
+@@ -25,7 +25,7 @@ def _handle_error(error: Exception) -> JSONResponse:
+     )
+ 
+ 
+-@router.get("/")
++@router.get("")
+ def list_topics_route(childId: str | None = Query(default=None), user=Depends(optional_auth)):
+     try:
+         topics = list_topics_service(childId, user)

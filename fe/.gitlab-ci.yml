@@ -1,0 +1,84 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  NODE_VERSION: "20"
+  DEPLOY_PORT: "3006"
+
+.only_main: &only_main
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: on_success
+    - when: never
+
+# ── Build ────────────────────────────────────────────────────────────────────
+build:
+  stage: build
+  image: node:${NODE_VERSION}-alpine
+  environment:
+    name: $CI_COMMIT_BRANCH
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules/
+  script:
+    - npm ci
+    - test -n "$ENV_CONFIG" || { echo "ENV_CONFIG is empty"; exit 1; }
+    - echo "$ENV_CONFIG" > .env.production
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+      - server.cjs
+    expire_in: 1 hour
+  <<: *only_main
+
+# ── Deploy ───────────────────────────────────────────────────────────────────
+deploy:
+  stage: deploy
+  image: intiupfi/ubuntu-ssh-rsync:22.04
+  environment:
+    name: $CI_COMMIT_BRANCH
+  before_script:
+    - mkdir -p ~/.ssh
+    - test -n "$BITNAMI_SSH_PRIVATE_KEY" || { echo "BITNAMI_SSH_PRIVATE_KEY is empty"; exit 1; }
+    - test -n "$IP_DEPLOY"              || { echo "IP_DEPLOY is empty"; exit 1; }
+    - test -n "$USER_DEPLOY"            || { echo "USER_DEPLOY is empty"; exit 1; }
+    - test -n "$DEPLOY_FOLDER"          || { echo "DEPLOY_FOLDER is empty"; exit 1; }
+    - echo "$BITNAMI_SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh-keyscan -T 10 -H "$IP_DEPLOY" >> ~/.ssh/known_hosts
+  script:
+    # 1. Ensure target directories exist on server
+    - ssh -o StrictHostKeyChecking=no "$USER_DEPLOY@$IP_DEPLOY" "mkdir -p '$DEPLOY_FOLDER/dist'"
+
+    # 2. Sync the bundled Node server and built SPA assets
+    - rsync -az --delete -e "ssh -o StrictHostKeyChecking=no" dist/ "$USER_DEPLOY@$IP_DEPLOY:$DEPLOY_FOLDER/dist/"
+    - rsync -az -e "ssh -o StrictHostKeyChecking=no" server.cjs "$USER_DEPLOY@$IP_DEPLOY:$DEPLOY_FOLDER/server.cjs"
+
+    # 3. Write env file to server
+    - test -n "$ENV_CONFIG" || { echo "ENV_CONFIG is empty"; exit 1; }
+    - echo "$ENV_CONFIG" | ssh -o StrictHostKeyChecking=no "$USER_DEPLOY@$IP_DEPLOY" "cat > '$DEPLOY_FOLDER/.env.production'"
+
+    # 4. Restart app via PM2
+    - |
+      APP_PORT="${DEPLOY_PORT:-3000}"
+      ssh -o StrictHostKeyChecking=no "$USER_DEPLOY@$IP_DEPLOY" "
+        cd '$DEPLOY_FOLDER';
+        pm2 stop speak-joy-fe 2>/dev/null || true;
+        pm2 delete speak-joy-fe 2>/dev/null || true;
+        NODE_ENV=production PORT=${APP_PORT} pm2 start server.cjs --name speak-joy-fe --update-env;
+        sleep 5;
+        pm2 status speak-joy-fe;
+        curl -f \"http://127.0.0.1:${APP_PORT}/login\" >/dev/null || {
+          echo 'Frontend health check failed on host';
+          pm2 logs speak-joy-fe --lines 80 --nostream || true;
+          exit 1;
+        };
+        pm2 save
+      "
+    - echo "Frontend deployed successfully."
+  <<: *only_main

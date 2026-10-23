@@ -1,0 +1,12 @@
+node_modules/
+build/
+dist/
+coverage/
+local-tests/
+*.local.test.ts
+*.local.test.tsx
+.DS_Store
+*.log
+.env*
+!.env.example
+*.md

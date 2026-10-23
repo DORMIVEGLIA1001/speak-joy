@@ -1,0 +1,15 @@
+{
+  "name": "mascot-bob",
+  "description": "Hoạt hình lặp 'bobbing' cho Mascot Mặt Trời Sunny hiển thị trong PathMap. Asset thuộc Animation_Assets_Dir (Req 8.1).",
+  "engine": "motion",
+  "keyframes": {
+    "y": [0, -6, 0]
+  },
+  "durationSec": 3,
+  "ease": "easeInOut",
+  "loop": true,
+  "loopGapSec": 0,
+  "minFps": 24,
+  "loopGapMaxMs": 500,
+  "requirements": ["8.1", "8.2"]
+}

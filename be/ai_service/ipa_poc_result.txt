@@ -1,0 +1,9 @@
+be/ai_service/hello_final.wav
+  IPA(univ): [f ə l o w ɛ l h a w ɑ l̪ u tʂ ɹ̩ n e]
+  IPA(eng):  [f ə l o w ɛ l h a w ɑ u t ə n e]
+be/ai_service/hello_16k.wav
+  IPA(univ): [f ə l o w ɛ l h a w ɑ l̪ u tʂ ɹ̩ n e]
+  IPA(eng):  [f ə l o w ɛ l h a w ɑ u t ə n e]
+be/rec_16k.wav
+  IPA(univ): []
+  IPA(eng):  []

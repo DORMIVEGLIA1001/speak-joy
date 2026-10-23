@@ -1,0 +1,21 @@
+fastapi==0.115.12
+uvicorn[standard]==0.34.3
+python-dotenv==1.1.0
+pydantic==2.11.5
+pydantic-settings==2.10.1
+psycopg2-binary==2.9.10
+PyJWT==2.10.1
+bcrypt==4.3.0
+httpx==0.28.1
+numpy==2.2.6
+soundfile==0.13.1
+python-multipart==0.0.20
+av==15.0.0
+dashscope==1.24.2
+supabase==2.15.3
+webauthn==2.2.0
+passlib==1.7.4
+allosaurus==1.0.2
+# Free-talk pronunciation scoring: text→IPA g2p for the child's transcript.
+# Needs the espeak-ng system binary at runtime; scoring degrades gracefully if absent.
+phonemizer==3.3.0

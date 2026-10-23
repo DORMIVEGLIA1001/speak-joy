@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Browser TTS + Mic Timing</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #1a1a2e;
+      color: #eee;
+    }
+    h1 {
+      color: #58cc02;
+      border-bottom: 2px solid #58cc02;
+      padding-bottom: 10px;
+    }
+    .test-section {
+      background: #16213e;
+      border: 1px solid #0f3460;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    button {
+      background: #58cc02;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 5px;
+      font-size: 14px;
+    }
+    button:hover {
+      background: #4eb302;
+    }
+    button:disabled {
+      background: #666;
+      cursor: not-allowed;
+    }
+    button.danger {
+      background: #ff4757;
+    }
+    button.danger:hover {
+      background: #e84118;
+    }
+    .status {
+      padding: 10px;
+      border-radius: 6px;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+    .status.listening {
+      background: #58cc02;
+      color: white;
+    }
+    .status.speaking {
+      background: #ff9f1a;
+      color: white;
+    }
+    .status.idle {
+      background: #444;
+      color: #aaa;
+    }
+    .log {
+      background: #0a0a0a;
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 15px;
+      max-height: 400px;
+      overflow-y: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+    .log-entry {
+      margin: 3px 0;
+      padding: 2px 0;
+    }
+    .log-entry.error {
+      color: #ff4757;
+    }
+    .log-entry.success {
+      color: #58cc02;
+    }
+    .log-entry.warning {
+      color: #ff9f1a;
+    }
+    .log-entry.info {
+      color: #1e90ff;
+    }
+    .timestamp {
+      color: #666;
+      margin-right: 8px;
+    }
+    .controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧪 Test Browser TTS + Mic Timing</h1>
+  <p>Test để kiểm tra:</p>
+  <ul>
+    <li>✅ Browser TTS hoạt động</li>
+    <li>✅ Speech Recognition không nghe TTS</li>
+    <li>✅ Timing pause/resume mic đúng</li>
+  </ul>
+
+  <div class="test-section">
+    <h2>🎤 Status</h2>
+    <div class="status idle" id="status">Idle</div>
+    <div class="controls">
+      <button id="startBtn">Start Call Simulation</button>
+      <button id="stopBtn" class="danger" disabled>Stop Call</button>
+      <button id="clearLogBtn">Clear Log</button>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h2>📝 Test Instructions</h2>
+    <ol>
+      <li>Click "Start Call Simulation"</li>
+      <li>AI sẽ nói: "Hello! I am your AI friend. How are you today?"</li>
+      <li><strong>Quan sát</strong>: Mic PHẢI tắt trong khi AI nói</li>
+      <li>Sau khi AI nói xong 800ms, mic sẽ bật lại</li>
+      <li><strong>Nói</strong>: "I am fine, thank you"</li>
+      <li><strong>Kiểm tra log</strong>: Không có transcript trong lúc AI nói</li>
+    </ol>
+  </div>
+
+  <div class="test-section">
+    <h2>📊 Console Log</h2>
+    <div class="log" id="logContainer"></div>
+  </div>
+
+  <script>
+    // Global state
+    let recognition = null;
+    let isActive = false;
+    let isSpeaking = false;
+    let micPausedDuringTTS = false;
+
+    // DOM elements
+    const statusDiv = document.getElementById('status');
+    const startBtn = document.getElementById('startBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const clearLogBtn = document.getElementById('clearLogBtn');
+    const logContainer = document.getElementById('logContainer');
+
+    // Logging
+    function log(message, type = 'info') {
+      const timestamp = new Date().toLocaleTimeString();
+      const entry = document.createElement('div');
+      entry.className = `log-entry ${type}`;
+      entry.innerHTML = `<span class="timestamp">[${timestamp}]</span>${message}`;
+      logContainer.appendChild(entry);
+      logContainer.scrollTop = logContainer.scrollHeight;
+      console.log(`[${timestamp}] ${message}`);
+    }
+
+    function updateStatus(text, className) {
+      statusDiv.textContent = text;
+      statusDiv.className = `status ${className}`;
+    }
+
+    // Initialize Speech Recognition
+    function initRecognition() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        log('❌ Speech Recognition not supported in this browser', 'error');
+        alert('Please use Chrome or Edge');
+        return null;
+      }
+
+      const rec = new SpeechRecognition();
+      rec.continuous = false;
+      rec.interimResults = false;
+      rec.lang = 'en-US';
+
+      rec.onstart = () => {
+        log('🎤 Mic started', 'success');
+        if (!isSpeaking) {
+          updateStatus('Listening...', 'listening');
+        }
+      };
+
+      rec.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        
+        if (isSpeaking) {
+          log(`⚠️ [CRITICAL] Mic heard during TTS: "${transcript}"`, 'error');
+          log('❌ FAIL: Mic should be paused when AI is speaking!', 'error');
+          micPausedDuringTTS = false;
+        } else {
+          log(`✅ Heard: "${transcript}"`, 'success');
+          // Simulate AI response
+          setTimeout(() => {
+            const aiResponse = `That's great! I'm happy to hear that. Let's keep talking!`;
+            speakAI(aiResponse);
+          }, 500);
+        }
+      };
+
+      rec.onerror = (e) => {
+        if (e.error !== 'no-speech') {
+          log(`❌ Recognition error: ${e.error}`, 'error');
+        }
+      };
+
+      rec.onend = () => {
+        log('🛑 Mic ended', 'info');
+        if (isActive && !isSpeaking) {
+          // Auto-restart if still active
+          setTimeout(() => {
+            if (isActive && !isSpeaking) {
+              try {
+                rec.start();
+              } catch (e) {
+                // Already running
+              }
+            }
+          }, 300);
+        }
+      };
+
+      return rec;
+    }
+
+    // Pause mic
+    function pauseMic() {
+      if (!recognition) return;
+      try {
+        log('⏸️ [MIC PAUSE] Stopping recognition...', 'warning');
+        recognition.abort();
+        updateStatus('Mic paused (AI speaking)', 'idle');
+      } catch (e) {
+        log(`⚠️ Mic pause error: ${e.message}`, 'warning');
+      }
+    }
+
+    // Resume mic
+    function resumeMic() {
+      if (!recognition || !isActive) return;
+      try {
+        log('▶️ [MIC RESUME] Starting recognition...', 'success');
+        recognition.start();
+        updateStatus('Listening...', 'listening');
+      } catch (e) {
+        // Already running, ignore
+      }
+    }
+
+    // Speak using Browser TTS
+    function speakAI(text) {
+      if (!('speechSynthesis' in window)) {
+        log('❌ Speech Synthesis not supported', 'error');
+        return;
+      }
+
+      log(`🗣️ AI speaking: "${text.substring(0, 50)}..."`, 'info');
+      isSpeaking = true;
+      updateStatus('AI Speaking...', 'speaking');
+      
+      // CRITICAL: Pause mic IMMEDIATELY
+      pauseMic();
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 1.0;
+      utterance.pitch = 1.2;
+      utterance.lang = 'en-US';
+
+      // Get a good voice
+      const voices = window.speechSynthesis.getVoices();
+      const goodVoice = voices.find(v => 
+        v.lang.includes('en') && 
+        (v.name.includes('Google') || v.name.includes('Female'))
+      );
+      if (goodVoice) {
+        utterance.voice = goodVoice;
+        log(`🎵 Using voice: ${goodVoice.name}`, 'info');
+      }
+
+      utterance.onstart = () => {
+        log('🔊 TTS audio started', 'info');
+      };
+
+      utterance.onend = () => {
+        log('✅ TTS audio ended', 'success');
+        isSpeaking = false;
+        
+        // Wait 800ms before resuming mic
+        log('⏳ Waiting 800ms before resuming mic...', 'warning');
+        setTimeout(() => {
+          log('⏱️ 800ms passed, resuming mic now', 'success');
+          resumeMic();
+        }, 800);
+      };
+
+      utterance.onerror = (e) => {
+        log(`❌ TTS error: ${e.error}`, 'error');
+        isSpeaking = false;
+        resumeMic();
+      };
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // Start call simulation
+    function startCall() {
+      if (isActive) return;
+      
+      log('🚀 Starting call simulation...', 'success');
+      isActive = true;
+      micPausedDuringTTS = true;
+      startBtn.disabled = true;
+      stopBtn.disabled = false;
+
+      // Initialize recognition
+      recognition = initRecognition();
+      if (!recognition) {
+        stopCall();
+        return;
+      }
+
+      // Wait for voices to load
+      if (window.speechSynthesis.getVoices().length === 0) {
+        log('⏳ Waiting for voices to load...', 'info');
+        window.speechSynthesis.onvoiceschanged = () => {
+          log(`✅ Loaded ${window.speechSynthesis.getVoices().length} voices`, 'success');
+          startCallSequence();
+        };
+      } else {
+        startCallSequence();
+      }
+    }
+
+    function startCallSequence() {
+      // AI greets first
+      updateStatus('Calling...', 'speaking');
+      setTimeout(() => {
+        const greeting = "Hello! I am your AI friend. How are you today?";
+        speakAI(greeting);
+      }, 1000);
+    }
+
+    // Stop call
+    function stopCall() {
+      if (!isActive) return;
+      
+      log('🛑 Stopping call...', 'error');
+      isActive = false;
+      isSpeaking = false;
+      startBtn.disabled = false;
+      stopBtn.disabled = true;
+      updateStatus('Idle', 'idle');
+
+      if (recognition) {
+        try {
+          recognition.abort();
+        } catch (e) {}
+      }
+
+      window.speechSynthesis.cancel();
+
+      // Summary
+      if (micPausedDuringTTS) {
+        log('✅ TEST PASSED: Mic properly paused during TTS', 'success');
+      } else {
+        log('❌ TEST FAILED: Mic was not paused during TTS', 'error');
+      }
+    }
+
+    // Clear log
+    function clearLog() {
+      logContainer.innerHTML = '';
+      log('🧹 Log cleared', 'info');
+    }
+
+    // Event listeners
+    startBtn.addEventListener('click', startCall);
+    stopBtn.addEventListener('click', stopCall);
+    clearLogBtn.addEventListener('click', clearLog);
+
+    // Initial log
+    log('✅ Test page loaded. Click "Start Call Simulation" to begin.', 'success');
+  </script>
+</body>
+</html>

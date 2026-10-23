@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Call Flow</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f0f0f0; }
+    .test-section { background: white; padding: 20px; margin: 10px 0; border-radius: 8px; }
+    button { padding: 10px 20px; margin: 5px; font-size: 16px; cursor: pointer; }
+    .log { background: #000; color: #0f0; padding: 10px; font-family: monospace; font-size: 12px; max-height: 300px; overflow-y: auto; }
+    .status { padding: 5px 10px; margin: 5px 0; border-radius: 4px; }
+    .status.success { background: #4CAF50; color: white; }
+    .status.error { background: #f44336; color: white; }
+    .status.info { background: #2196F3; color: white; }
+  </style>
+</head>
+<body>
+  <h1>🧪 Test Call Flow - Step by Step</h1>
+  
+  <div class="test-section">
+    <h2>1️⃣ Test Speech Recognition</h2>
+    <button onclick="testSpeechRecognition()">Start Mic Test</button>
+    <button onclick="stopSpeechRecognition()">Stop Mic</button>
+    <div id="mic-status" class="status info">Not started</div>
+    <div id="mic-transcript"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>2️⃣ Test Backend API</h2>
+    <input id="test-text" value="Hello" style="padding: 8px; width: 300px;">
+    <button onclick="testBackendAPI()">Send to Backend</button>
+    <div id="api-status" class="status info">Not tested</div>
+    <div id="api-response"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>3️⃣ Test TTS</h2>
+    <input id="tts-text" value="You are doing great!" style="padding: 8px; width: 300px;">
+    <button onclick="testTTS()">Speak</button>
+    <div id="tts-status" class="status info">Not tested</div>
+  </div>
+
+  <div class="test-section">
+    <h2>📋 Console Logs</h2>
+    <button onclick="clearLogs()">Clear Logs</button>
+    <div id="logs" class="log"></div>
+  </div>
+
+  <script>
+    let recognition = null;
+    let audioElement = null;
+
+    function log(message, type = 'info') {
+      const logs = document.getElementById('logs');
+      const time = new Date().toLocaleTimeString();
+      const color = type === 'error' ? '#f00' : type === 'success' ? '#0f0' : '#0ff';
+      logs.innerHTML += `<div style="color: ${color}">[${time}] ${message}</div>`;
+      logs.scrollTop = logs.scrollHeight;
+      console.log(`[${time}] ${message}`);
+    }
+
+    function clearLogs() {
+      document.getElementById('logs').innerHTML = '';
+    }
+
+    function testSpeechRecognition() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        log('❌ Speech Recognition not supported!', 'error');
+        document.getElementById('mic-status').textContent = 'Not Supported';
+        document.getElementById('mic-status').className = 'status error';
+        return;
+      }
+
+      recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+
+      recognition.onstart = () => {
+        log('✅ Microphone started', 'success');
+        document.getElementById('mic-status').textContent = 'Listening...';
+        document.getElementById('mic-status').className = 'status success';
+      };
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        log(`🎤 Heard: "${transcript}"`, 'success');
+        document.getElementById('mic-transcript').innerHTML = `<strong>You said:</strong> ${transcript}`;
+      };
+
+      recognition.onerror = (e) => {
+        log(`❌ Mic error: ${e.error}`, 'error');
+        document.getElementById('mic-status').textContent = `Error: ${e.error}`;
+        document.getElementById('mic-status').className = 'status error';
+      };
+
+      recognition.onend = () => {
+        log('🛑 Recognition ended', 'info');
+        document.getElementById('mic-status').textContent = 'Ended';
+        document.getElementById('mic-status').className = 'status info';
+      };
+
+      try {
+        recognition.start();
+      } catch (err) {
+        log(`❌ Failed to start: ${err}`, 'error');
+      }
+    }
+
+    function stopSpeechRecognition() {
+      if (recognition) {
+        recognition.stop();
+        log('🛑 Manually stopped recognition');
+      }
+    }
+
+    async function testBackendAPI() {
+      const text = document.getElementById('test-text').value;
+      log(`📤 Sending to backend: "${text}"`);
+      document.getElementById('api-status').textContent = 'Sending...';
+      document.getElementById('api-status').className = 'status info';
+
+      try {
+        const response = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            stream: true,
+            messages: [{ role: 'user', content: text }],
+            topic: 'freetalk',
+            topic_name: 'Free Talk',
+            vocabulary: [],
+            spoken_text: text,
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        log('✅ Backend responded!', 'success');
+        document.getElementById('api-status').textContent = 'Success';
+        document.getElementById('api-status').className = 'status success';
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+        let fullReply = '';
+
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split('\n\n');
+          buffer = lines.pop();
+
+          for (const line of lines) {
+            if (!line.startsWith('data:')) continue;
+            const data = line.slice(5).trim();
+            if (data === '[DONE]') continue;
+            
+            try {
+              const payload = JSON.parse(data);
+              if (payload.type === 'delta' && payload.text) {
+                fullReply += payload.text;
+                log(`📨 Token: ${payload.text}`);
+              }
+            } catch (e) {
+              // ignore parse errors
+            }
+          }
+        }
+
+        document.getElementById('api-response').innerHTML = `<strong>AI Reply:</strong> ${fullReply}`;
+        log(`✅ Full reply received: "${fullReply}"`, 'success');
+      } catch (err) {
+        log(`❌ Backend error: ${err.message}`, 'error');
+        document.getElementById('api-status').textContent = `Error: ${err.message}`;
+        document.getElementById('api-status').className = 'status error';
+      }
+    }
+
+    async function testTTS() {
+      const text = document.getElementById('tts-text').value;
+      log(`🔊 Testing TTS: "${text}"`);
+      document.getElementById('tts-status').textContent = 'Speaking...';
+      document.getElementById('tts-status').className = 'status info';
+
+      try {
+        const response = await fetch('/api/tts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text })
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const audioBlob = await response.blob();
+        const audioUrl = URL.createObjectURL(audioBlob);
+        
+        if (audioElement) {
+          audioElement.pause();
+          audioElement.src = '';
+        }
+        
+        audioElement = new Audio(audioUrl);
+        audioElement.onplay = () => {
+          log('✅ TTS playing', 'success');
+          document.getElementById('tts-status').textContent = 'Playing...';
+          document.getElementById('tts-status').className = 'status success';
+        };
+        audioElement.onended = () => {
+          log('✅ TTS finished');
+          document.getElementById('tts-status').textContent = 'Finished';
+          document.getElementById('tts-status').className = 'status success';
+          URL.revokeObjectURL(audioUrl);
+        };
+        audioElement.onerror = () => {
+          log('❌ TTS playback error', 'error');
+          document.getElementById('tts-status').textContent = 'Playback Error';
+          document.getElementById('tts-status').className = 'status error';
+        };
+        
+        await audioElement.play();
+      } catch (err) {
+        log(`❌ TTS error: ${err.message}`, 'error');
+        document.getElementById('tts-status').textContent = `Error: ${err.message}`;
+        document.getElementById('tts-status').className = 'status error';
+      }
+    }
+
+    log('🚀 Test page loaded. Start testing!');
+  </script>
+</body>
+</html>

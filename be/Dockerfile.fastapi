@@ -1,0 +1,29 @@
+FROM python:3.11-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PIP_NO_CACHE_DIR=1
+ENV PORT=8000
+ENV PGCLIENTENCODING=UTF8
+
+WORKDIR /app
+
+# espeak-ng: the system binary phonemizer calls to turn free-talk transcripts into IPA
+# (free-talk pronunciation scoring). Absent → scoring degrades gracefully, so this is the
+# only extra system package needed for that feature.
+RUN apt-get update && apt-get install -y --no-install-recommends espeak-ng \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.fastapi.txt /tmp/requirements.fastapi.txt
+RUN python -m pip install --upgrade pip setuptools wheel \
+    && python -m pip install -r /tmp/requirements.fastapi.txt
+
+COPY app /app/be/app
+COPY ai_service /app/be/ai_service
+COPY get_data/kids_english_dataset_10000_retopic.json /app/be/get_data/kids_english_dataset_10000_retopic.json
+
+ENV PYTHONPATH=/app
+
+EXPOSE 8000
+
+CMD ["uvicorn", "be.app.main:app", "--host", "0.0.0.0", "--port", "8000"]
