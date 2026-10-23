@@ -1,0 +1,8 @@
+[submodule "fe"]
+	path = fe
+	url = https://github.com/DORMIVEGLIA1001/speak-joy-fe.git
+	branch = main
+[submodule "be"]
+	path = be
+	url = https://github.com/DORMIVEGLIA1001/speak-joy-be.git
+	branch = main
